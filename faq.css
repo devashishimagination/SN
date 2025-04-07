@@ -1,0 +1,267 @@
+/* FAQ Page Specific Styles */
+
+/* Hero Section */
+.faq-hero {
+  background: linear-gradient(rgba(26, 42, 58, 0.9), rgba(26, 42, 58, 0.9)),
+    url("https://placehold.co/1600x800/1a2a3a/FFFFFF?text=FAQs");
+  background-size: cover;
+  background-position: center;
+  margin-top: 0; /* Remove any top margin */
+  padding-top: 100px; /* Add padding to account for fixed navbar */
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+/* FAQ Sidebar */
+.faq-sidebar {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  position: sticky;
+  top: 100px; /* Adjusted to account for fixed navbar */
+  height: fit-content;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.faq-sidebar h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #1a2a3a;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.faq-sidebar h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #ff6b6b;
+}
+
+.faq-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.faq-categories li {
+  margin-bottom: 10px;
+}
+
+.faq-categories li a {
+  display: block;
+  padding: 10px 15px;
+  color: #555;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.faq-categories li a:hover {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+}
+
+.faq-categories li.active a {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.faq-contact {
+  background-color: #1a2a3a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.faq-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.faq-contact p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.faq-contact .btn {
+  width: 100%;
+  background-color: #ff6b6b;
+  border: none;
+}
+
+.faq-contact .btn:hover {
+  background-color: #ff5252;
+}
+
+/* FAQ Content */
+.faq-content {
+  padding: 20px 0;
+}
+
+.faq-search {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.faq-search input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-search input:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+}
+
+.faq-search button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 45px;
+  height: 45px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-search button:hover {
+  background-color: #0058c5;
+}
+
+.faq-category {
+  margin-bottom: 40px;
+}
+
+.faq-category h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.faq-category h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #0070f3;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+  margin-top: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f8f9fa;
+}
+
+.faq-toggle {
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-toggle {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+  max-height: 1000px;
+  padding: 0 20px 20px;
+}
+
+.faq-answer p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-sidebar {
+    position: static;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-section {
+    padding: 60px 0;
+  }
+
+  .faq-search input {
+    padding: 12px 15px;
+  }
+
+  .faq-search button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .faq-question {
+    padding: 15px;
+  }
+}
+

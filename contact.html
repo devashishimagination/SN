@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Saturnx Nexus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar placeholder - will be added by client -->
+    <div class="navbar-placeholder">
+        <!-- Navbar will be added here -->
+        <!-- <div id="header"></div>
+        <script src="../js/header.js"></script> -->
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section contact-hero">
+        <div class="container">
+            <h1 class="main-title">Contact Us <span>We'd love to hear from you</span></h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Tech Street, Innovation City<br>Silicon Valley, CA 94043</p>
+                    <a href="#map" class="contact-link">View on Map <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>+1-234-567-8900<br>+1-234-567-8901</p>
+                    <a href="tel:+12345678900" class="contact-link">Call Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>info@saturnxnexus.com<br>admissions@saturnxnexus.com</p>
+                    <a href="mailto:info@saturnxnexus.com" class="contact-link">Send Email <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                    <span class="status-badge online"><i class="fas fa-circle"></i> Currently Open</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-container">
+                <div class="contact-form-content">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="section-description">Have questions about our courses or need more information? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject <span class="required">*</span></label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course">Interested Course</label>
+                            <select id="course" name="course">
+                                <option value="">Select a course</option>
+                                <option value="salesforce">Salesforce Development</option>
+                                <option value="web-development">Web Development Bootcamp</option>
+                                <option value="data-science">Data Science Fundamentals</option>
+                                <option value="mobile-app">Mobile App Development</option>
+                                <option value="cloud-computing">Cloud Computing</option>
+                                <option value="devops">Devops</option>
+                                <option value="artificial-intelligence">Artificial Intelligence</option>
+                                <option value="cybersecurity">Cybersecurity Specialist</option>
+                                <option value="c c++">C C++</option>
+                                <option value="web-design">Web Design</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="python">Python Developer</option>
+                                <option value="data-analyst">Data Analyst</option>
+                                <option value="ui-ux">UI/UX</option>
+                                <option value="block-chain">Block Chain Davelopment</option>
+                                <option value="advanced-java">Advanced Java</option>
+                                <option value="linux-Administration">Linux Administration</option>
+                                <option value="mean-stack">Mean Stack</option>
+                                <option value="mern-stack">Mern Stack</option>
+                                <option value="other">Other</option>
+
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            <label for="newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="../SaturnxNexus-PlacementPage/image/contactus-image.jpeg" alt="Contact Saturnx Nexus">
+                    <div class="contact-social">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.54249883796518!2d79.08143002966324!3d21.16513019607327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf7c7d9bda07%3A0x20aec29a6496f565!2sRoyals%20Webtech%20%7C%20Software%20Development%2C%20Website%20Developments%2C%20Mobile%20Application!5e0!3m2!1sen!2sin!4v1743502844695!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-card">
+                <h3>Saturnx Nexus Headquarters</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Innovation City, CA 94043</p>
+                <p><i class="fas fa-phone-alt"></i> +1-234-567-8900</p>
+                <p><i class="fas fa-envelope"></i> info@saturnxnexus.com</p>
+                <a href="https://goo.gl/maps/JGEVmscj8W2XCcQS6" target="_blank" class="btn btn-outline">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-description">Find answers to common questions about contacting us and our response times.</p>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I get in touch with your team for assistance?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> You can contact us via email, phone, or live chat. 
+                            Our support team is available during business hours to assist you. 
+                            Visit our Contact Us page for details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to receive a response from your team?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We aim to respond to all inquiries within 24 hours. 
+                            Complex technical requests may take up to 48-72 hours for resolution.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I schedule a call with your support team?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Yes, you can book a one-on-one consultation with our experts. Visit our Contact Us page to schedule a call.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer multilingual support?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> Yes, our support team provides assistance in multiple languages. Please mention your preferred language when contacting us.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I submit feedback about your support service?</span>
+                        <i class="fas fa-chevron-down faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p> We value your feedback! You can share your experience by filling out our Customer Feedback Form available on our website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Tech Journey?</h2>
+            <p>Explore our courses and take the first step towards a successful career in technology.</p>
+            <a href="index.html" class="btn btn-cta">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Saturnx Nexus</h2>
+                    <p>Empowering the next generation of tech professionals</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="placement.html">Placements</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1-234-567-8900</p>
+                    <p><i class="fas fa-envelope"></i> info@saturnxnexus.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Innovation City</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Saturnx Nexus. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+
+     <!-- Footer Container -->
+     <div class="footer-container"></div>
+
+    <script src="common.js"></script>
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
+
