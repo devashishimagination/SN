@@ -226,8 +226,8 @@
 .hero-section .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  gap: 125px;
+  align-items: normal;
   position: relative;
   z-index: 2;
 }
@@ -293,12 +293,13 @@
 /* ONLY CHANGING THE IMAGE-RELATED STYLES */
 .hero-image {
   position: relative;
-  width: 120%; /* Increased from 100% */
+  width: 171%; /* Increased from 100% */
   max-width: 650px; /* Increased from 550px */
-  height: 400px; /* Increased from 350px */
+  height: 574px; /* Increased from 350px */
   margin: 0 -10% 0 0; /* Adjusted to pull image right */
   border-radius: 12px;
   overflow: hidden;
+  top: -37px;
 }
 
 .slider-image {
