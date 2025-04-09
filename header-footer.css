@@ -298,11 +298,12 @@
 }
 
 .footer-logo {
-  margin-bottom: 20px;
+  margin-bottom: -25px;
+  margin-left: 70px;
 }
 
 .footer-logo img {
-  height: 275px;
+  height: 193px;
   width: 275;
   margin-top: -125;
 }
