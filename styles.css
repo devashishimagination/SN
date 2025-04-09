@@ -334,22 +334,87 @@ a:hover {
 .cta-section {
   background: linear-gradient(135deg, #1a2a3a, #2c3e50);
   color: white;
-  padding: 60px 0;
+  padding: 80px 0;
   text-align: center;
   position: relative;
   z-index: 10; /* Ensure it's above other elements */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cta-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 
 .cta-section p {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto 30px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  color: #ecf0f1;
 }
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-light {
+  background-color: #f35912;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+}
+
+.btn-light:hover {
+  background-color: #e67e22;
+  box-shadow: 0 6px 12px rgba(243, 156, 18, 0.5);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: #ecf0f1;
+  border: 2px solid #ecf0f1;
+}
+
+.btn-outline-light:hover {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+      padding: 50px 20px;
+  }
+
+  .cta-section h2 {
+      font-size: 2rem;
+  }
+
+  .cta-section p {
+      font-size: 1rem;
+  }
+
+  .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
 
 /* Footer */
 .footer {
