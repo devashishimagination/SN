@@ -199,90 +199,149 @@ function initTestimonialsSlider() {
 
 // Function to initialize enquiry popup
 function initEnquiryPopup() {
-  const enquiryPopup = document.getElementById("enquiryPopup")
-  const enquiryClose = document.getElementById("enquiryClose")
-  const heroEnquiryBtn = document.getElementById("heroEnquiryBtn")
-  const ctaEnquiryBtn = document.getElementById("ctaEnquiryBtn")
-  const enquiryForm = document.getElementById("enquiryForm")
+  const enquiryPopup = document.getElementById("enquiryPopup");
+  const enquiryClose = document.getElementById("enquiryClose");
+  const heroEnquiryBtn = document.getElementById("heroEnquiryBtn");
+  const ctaEnquiryBtn = document.getElementById("ctaEnquiryBtn");
+  const enquiryForm = document.getElementById("enquiryForm");
 
-  if (!enquiryPopup || !enquiryClose) return
+  if (!enquiryPopup || !enquiryClose) return;
 
-  // Show popup on page load after 5 seconds
+  // Show popup after 5 seconds
   setTimeout(() => {
-    enquiryPopup.classList.add("active")
-  }, 5000)
+    enquiryPopup.classList.add("active");
+  }, 5000);
 
-  // Close popup when close button is clicked
+  // Close popup when clicking the close button
   enquiryClose.addEventListener("click", () => {
-    enquiryPopup.classList.remove("active")
-  })
+    enquiryPopup.classList.remove("active");
+  });
 
   // Close popup when clicking outside the content
   enquiryPopup.addEventListener("click", (e) => {
     if (e.target === enquiryPopup) {
-      enquiryPopup.classList.remove("active")
+      enquiryPopup.classList.remove("active");
     }
-  })
+  });
 
-  // Show popup when enquiry buttons are clicked
+  // Open popup on button click
   if (heroEnquiryBtn) {
     heroEnquiryBtn.addEventListener("click", (e) => {
-      e.preventDefault()
-      enquiryPopup.classList.add("active")
-    })
+      e.preventDefault();
+      enquiryPopup.classList.add("active");
+    });
   }
 
   if (ctaEnquiryBtn) {
     ctaEnquiryBtn.addEventListener("click", (e) => {
-      e.preventDefault()
-      enquiryPopup.classList.add("active")
-    })
+      e.preventDefault();
+      enquiryPopup.classList.add("active");
+    });
   }
 
   // Handle form submission
   if (enquiryForm) {
     enquiryForm.addEventListener("submit", (e) => {
-      e.preventDefault()
+      e.preventDefault();
 
-      // Simple validation
-      let isValid = true
-      const requiredFields = enquiryForm.querySelectorAll("[required]")
+      let isValid = true;
+      const requiredFields = enquiryForm.querySelectorAll("[required]");
 
       requiredFields.forEach((field) => {
         if (!field.value.trim()) {
-          isValid = false
-          field.classList.add("error")
+          isValid = false;
+          field.classList.add("error");
         } else {
-          field.classList.remove("error")
+          field.classList.remove("error");
         }
-      })
+      });
 
       if (isValid) {
-        // Show success message
-        const successMsg = document.createElement("div")
-        successMsg.className = "success-message"
+        // ✅ STEP 1: Get form values
+        const nameVal = document.getElementById("name").value.trim();
+        const emailVal = document.getElementById("email").value.trim();
+        const phoneVal = document.getElementById("phone").value.trim();
+        const courseVal = document.getElementById("course").value.trim();
+        const msgVal = document.getElementById("message").value.trim() || "N/A";
+
+        // ✅ STEP 2: Build WhatsApp message
+        const whatsappMessage =
+          `*New Enquiry Received*\n\n` +
+          `*Name:* ${nameVal}\n` +
+          `*Email:* ${emailVal}\n` +
+          `*Phone:* ${phoneVal}\n` +
+          `*Interested Course:* ${courseVal}\n` +
+          `*Message:* ${msgVal}`;
+
+        // ✅ STEP 3: Send message to WhatsApp
+        const whatsappNumber = "919765569760"; // Replace with your number
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappURL, "_blank");
+
+        // ✅ STEP 4: Show success message
+        const successMsg = document.createElement("div");
+        successMsg.className = "success-message";
         successMsg.innerHTML =
-          '<i class="fas fa-check-circle"></i> Your enquiry has been submitted successfully! We\'ll get back to you soon.'
+          '<i class="fas fa-check-circle"></i> Your enquiry has been submitted successfully! We\'ll get back to you soon.';
 
-        // Replace form with success message
-        enquiryForm.innerHTML = ""
-        enquiryForm.appendChild(successMsg)
+        enquiryForm.innerHTML = "";
+        enquiryForm.appendChild(successMsg);
 
-        // Close popup after 3 seconds
+        // ✅ STEP 5: Hide popup after success
         setTimeout(() => {
-          enquiryPopup.classList.remove("active")
+          enquiryPopup.classList.remove("active");
 
-          // Reset form after popup is closed
+          // Reinitialize the form
           setTimeout(() => {
-            enquiryForm.innerHTML = enquiryForm.innerHTML
-            initEnquiryPopup() // Reinitialize the form
-          }, 500)
-        }, 3000)
-
-        // In a real application, you would submit the form data to a server here
-        console.log("Form submitted successfully")
+            enquiryForm.innerHTML = `
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="course">Interested Course <span class="required">*</span></label>
+                <select id="course" name="course" required>
+                  <option value="">Select a course</option>
+                  <option value="Salesforce">Salesforce</option>
+                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  <option value="Data Science Fundamentals">Data Science Fundamentals</option>
+                  <option value="Big Data Analytics">Big Data Analytics</option>
+                  <option value="Cloud Computing">Cloud Computing</option>
+                  <option value="Full Stack Web Development">Full Stack Web Development</option>
+                  <option value="Mern Stack Development">Mern Stack Development</option>
+                  <option value="Mean Stack Development">Mean Stack Development</option>
+                  <option value="System Engineering">System Engineering</option>
+                  <option value="Advanced Java">Advanced Java</option>
+                  <option value="Linux Administration">Linux Administration</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="C/C++">C/C++</option>
+                  <option value="Security Specialist">Security Specialist</option>
+                  <option value="DevOps">DevOps</option>
+                  <option value="Blockchain Development">Blockchain Development</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Submit Enquiry</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            `;
+            initEnquiryPopup(); // Re-attach event listener
+          }, 500);
+        }, 3000);
       }
-    })
+    });
   }
 }
 
