@@ -277,6 +277,25 @@ function initEnquiryPopup() {
         const whatsappNumber = "919765569760"; // Replace with your number
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappURL, "_blank");
+    
+         // ✅ STEP 4: Send to backend for saving into file
+  // ✅ Send to Google Sheet
+fetch("https://script.google.com/macros/s/AKfycbXYZ12345/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: nameVal,
+    email: emailVal,
+    phone: phoneVal,
+    course: courseVal,
+    message: msgVal,
+  }),
+})
+.then(res => res.json())
+.then(data => console.log("Saved to Google Sheets:", data))
+.catch(err => console.error("Error saving to Google Sheets:", err));
 
         // ✅ STEP 4: Show success message
         const successMsg = document.createElement("div");
