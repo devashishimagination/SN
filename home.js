@@ -210,7 +210,7 @@ function initEnquiryPopup() {
   // Show popup after 5 seconds
   setTimeout(() => {
     enquiryPopup.classList.add("active");
-  }, 5000);
+  }, 3000);
 
   // Close popup when clicking the close button
   enquiryClose.addEventListener("click", () => {
@@ -240,62 +240,79 @@ function initEnquiryPopup() {
   }
 
   // Handle form submission
-  if (enquiryForm) {
-    enquiryForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+// Handle form submission
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      let isValid = true;
-      const requiredFields = enquiryForm.querySelectorAll("[required]");
+    let isValid = true;
+    const requiredFields = enquiryForm.querySelectorAll("[required]");
 
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.classList.add("error");
-        } else {
-          field.classList.remove("error");
-        }
+    // Validate required fields
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.classList.add("error");
+      } else {
+        field.classList.remove("error");
+      }
+    });
+
+    if (isValid) {
+      // ✅ STEP 1: Get form values - ensure we're getting the correct elements
+      const nameVal = enquiryForm.querySelector("#name").value.trim();
+      const emailVal = enquiryForm.querySelector("#email").value.trim();
+      const phoneVal = enquiryForm.querySelector("#phone").value.trim();
+      const courseVal = enquiryForm.querySelector("#course").value.trim();
+      const msgVal = enquiryForm.querySelector("#message").value.trim() || "N/A";
+
+      // Debug: Log values to console to verify they're captured
+      console.log("Form values:", {
+        name: nameVal,
+        email: emailVal,
+        phone: phoneVal,
+        course: courseVal,
+        message: msgVal
       });
 
-      if (isValid) {
-        // ✅ STEP 1: Get form values
-        const nameVal = document.getElementById("name").value.trim();
-        const emailVal = document.getElementById("email").value.trim();
-        const phoneVal = document.getElementById("phone").value.trim();
-        const courseVal = document.getElementById("course").value.trim();
-        const msgVal = document.getElementById("message").value.trim() || "N/A";
+      // ✅ STEP 2: Build WhatsApp message - ensure all values are included
+      const whatsappMessage =
+        `*New Enquiry Received*\n\n` +
+        `*Name:* ${nameVal || "Not provided"}\n` +
+        `*Email:* ${emailVal || "Not provided"}\n` +
+        `*Phone:* ${phoneVal || "Not provided"}\n` +
+        `*Interested Course:* ${courseVal || "Not specified"}\n` +
+        `*Message:* ${msgVal}`;
 
-        // ✅ STEP 2: Build WhatsApp message
-        const whatsappMessage =
-          `*New Enquiry Received*\n\n` +
-          `*Name:* ${nameVal}\n` +
-          `*Email:* ${emailVal}\n` +
-          `*Phone:* ${phoneVal}\n` +
-          `*Interested Course:* ${courseVal}\n` +
-          `*Message:* ${msgVal}`;
+      console.log("WhatsApp message:", whatsappMessage);
 
-        // ✅ STEP 3: Send message to WhatsApp
-        const whatsappNumber = "919765569760"; // Replace with your number
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        window.open(whatsappURL, "_blank");
+      // ✅ STEP 3: Send message to WhatsApp
+      const whatsappNumber = "919765569760"; // Replace with your number
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      
+      // Rest of your code...
+      window.open(whatsappURL, "_blank");
+      
+      // Continue with Google Sheets submission and success message...
     
          // ✅ STEP 4: Send to backend for saving into file
   // ✅ Send to Google Sheet
-fetch("https://script.google.com/macros/s/AKfycbXYZ12345/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: nameVal,
-    email: emailVal,
-    phone: phoneVal,
-    course: courseVal,
-    message: msgVal,
-  }),
-})
-.then(res => res.json())
-.then(data => console.log("Saved to Google Sheets:", data))
-.catch(err => console.error("Error saving to Google Sheets:", err));
+// fetch("https://script.google.com/macros/s/AKfycbXYZ12345/exec", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     name: nameVal,
+//     email: emailVal,
+//     phone: phoneVal,
+//     course: courseVal,
+//     message: msgVal,
+//   }),
+// })
+// .then(res => res.json())
+// .then(data => console.log("Saved to Google Sheets:", data))
+// .catch(err => console.error("Error saving to Google Sheets:", err));
 
         // ✅ STEP 4: Show success message
         const successMsg = document.createElement("div");
