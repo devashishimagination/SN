@@ -1277,38 +1277,60 @@
 }
 
 /* Call to Action Section */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .cta-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #2c3e50, #1a252f);
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 100px 20px;
+  background: #1e2b3c; /* Deep modern blue */
+  color: #ffffff;
+  text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .cta-content {
-  text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
 .cta-content h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .cta-content p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
+
+.cta-buttons a {
+  padding: 14px 30px;
+  background-color: #f76b6b;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-buttons a:hover {
+  background-color: #ff7d7d;
+  transform: translateY(-2px);
+}
+
 
 /* Footer Styles */
 .footer {
