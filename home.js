@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize navbar scroll effect
-  initNavbar()
+  // initNavbar()
 
   // Initialize dropdown toggles for mobile
   initDropdowns()
@@ -28,20 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Function to initialize navbar scroll effect
-function initNavbar() {
-  const navbar = document.querySelector(".navbar")
+// function initNavbar() {
+//   const navbar = document.querySelector(".navbar")
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled")
-    } else {
-      navbar.classList.remove("scrolled")
-    }
-  })
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY > 50) {
+//       navbar.classList.add("scrolled")
+//     } else {
+//       navbar.classList.remove("scrolled")
+//     }
+//   })
 
-  // Trigger scroll event on page load to set initial state
-  window.dispatchEvent(new Event("scroll"))
-}
+//   // Trigger scroll event on page load to set initial state
+//   // window.dispatchEvent(new Event("scroll"))
+// }
 
 // Function to initialize dropdown toggles for mobile
 function initDropdowns() {
@@ -297,22 +297,61 @@ if (enquiryForm) {
     
          // ✅ STEP 4: Send to backend for saving into file
   // ✅ Send to Google Sheet
-// fetch("https://script.google.com/macros/s/AKfycbXYZ12345/exec", {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify({
-//     name: nameVal,
-//     email: emailVal,
-//     phone: phoneVal,
-//     course: courseVal,
-//     message: msgVal,
-//   }),
-// })
-// .then(res => res.json())
-// .then(data => console.log("Saved to Google Sheets:", data))
-// .catch(err => console.error("Error saving to Google Sheets:", err));
+  // if (isValid) {
+  //   const nameVal = enquiryForm.querySelector("#name").value.trim();
+  //   const emailVal = enquiryForm.querySelector("#email").value.trim();
+  //   const phoneVal = enquiryForm.querySelector("#phone").value.trim();
+  //   const courseVal = enquiryForm.querySelector("#course").value.trim();
+  //   const msgVal = enquiryForm.querySelector("#message").value.trim() || "N/A";
+  
+    // ✅ WhatsApp message & window.open here...
+  
+//     // ✅ Google Form submission starts here
+// const formData = new FormData();
+// formData.append("entry.1448153125", nameVal);
+// formData.append("entry.763946773", emailVal);
+// formData.append("entry.1402292017", phoneVal);
+// formData.append("entry.2088249416", courseVal);
+// formData.append("entry.117953690", msgVal);
+
+// fetch('https://docs.google.com/forms/d/e/1FAIpQLSdTUpxlePolBV57gH4uliPVMcPU-3Is4FucXawz0L3pUO7KKg/formResponse', {
+//   method: 'POST',
+//   body: formData,
+// }).then(response => {
+//   if (response.ok) {
+//     console.log("Form submitted successfully!");
+//   } else {
+//     console.error("Failed to submit form: ", response.statusText);
+//   }
+// }).catch(err => {
+//   console.error("Error:", err);
+// });
+const formData = new URLSearchParams();
+formData.append("name", nameVal);
+formData.append("email", emailVal);
+formData.append("phone", phoneVal);
+formData.append("course", courseVal);
+formData.append("message", msgVal);
+
+fetch("https://script.google.com/macros/s/AKfycbze8cru23RXZmBvCXqiHfH7IYnrYYjMnpxFHbqAEmbb7BevlQyNnpj81MG1Z81w-vlf/exec", {
+  method: "POST",
+  body: formData
+})
+.then(response => response.text())
+.then(result => {
+  console.log("Google Sheet submission:", result);
+  alert("Enquiry submitted successfully!");
+})
+.catch(err => {
+  console.error("Submission error:", err);
+  alert("There was an error submitting your enquiry.");
+});
+
+
+  
+    // ✅ Success message and hide popup below...
+  
+  
 
         // ✅ STEP 4: Show success message
         const successMsg = document.createElement("div");
