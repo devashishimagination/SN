@@ -101,7 +101,7 @@ a:hover {
   margin-top: 40px;
 }
 
-.course-card {
+.course-card1 {
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -110,7 +110,7 @@ a:hover {
   border: 1px solid #eaeaea;
 }
 
-.course-card:hover {
+.course-card1:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }

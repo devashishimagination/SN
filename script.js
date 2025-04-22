@@ -266,7 +266,7 @@ function renderCourses() {
 
   courses.forEach((course) => {
     const courseCard = document.createElement("div");
-    courseCard.className = "course-card";
+    courseCard.className = "course-card1";
 
     // Get the correct page filename from the map
     let coursePage = coursePageMap[course.title.trim()] || "course-detail.html"; // Default fallback
