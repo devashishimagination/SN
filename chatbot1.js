@@ -112,6 +112,42 @@ const chatData = {
 
 };
 
+//This keeps your original chatData intact but creates a case-insensitive version for safe lookup.
+const chatDataNormalizedMap = {};
+Object.keys(chatData).forEach(key => {
+  chatDataNormalizedMap[key.toLowerCase()] = chatData[key];
+});
+
+
+// New functionality: Keyword-based response
+const keywordResponses = {
+  "fee": "The fee structure for courses varies. Please contact us at saturnx@gmail.com for details.",
+  "certification": "Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",
+  "certificate":"Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",
+  "contact": "You can contact us at saturnx@gmail.com or call us at 800000000.",
+  "duration": "The duration for most courses is between 6 to 7 months.",
+  "salesforce":"Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.",
+  "cloud computing":"Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.",
+  "advance java": "Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.",
+  "java":"Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.",
+  "linux administration":"The Linux course includes command-line basics, shell scripting, system administration, and real-time server configuration tasks, includes hands-on projects, and is taught by experienced instructors",
+  "uiux":"Yes! Our UI/UX course focuses on user research, wireframing, Figma, Adobe XD, and real-time project experience, includes hands-on projects, and is taught by experienced instructors",
+  "artificial intelligence": "Absolutely! Our Artificial Intelligence covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+  "full stack development": "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
+  "data science":"The Data Science course includes Python, Machine Learning, Statistics, Data Visualization, Pandas, NumPy, and real-time projects, includes hands-on projects, and is taught by experienced instructors.",
+  "data analyst":"Absolutely! Our Data Analytics covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+  "mern stack":"The MERN Stack course includes MongoDB, Express.js, React.js, and Node.js with project-based learning and deployment., includes hands-on projects, and is taught by experienced instructors..",
+  "mean stack": "Our MEAN Stack course includes MongoDB, Express, Angular, and Node.js, with REST API integration and real-time applications, includes hands-on projects, and is taught by experienced instructors.",
+  "system engineering":"System Engineering covers OS concepts, networking, hardware & software configuration, and enterprise systems handling, includes hands-on projects, and is taught by experienced instructors.",
+  "devops":"Our DevOps training includes CI/CD, Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and cloud integration with real-world projects, includes hands-on projects, and is taught by experienced instructors.",
+  "cyber security":"The Cyber Security course covers ethical hacking, network security, threat analysis, and cybersecurity tools with live labs., includes hands-on projects, and is taught by experienced instructors.",
+  "c/c++": "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
+  "block chain":"Block Chain covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+  "hi" : "Hii  I am Nexus how can I help you.",  
+  "hello": "Hello  I am Nexus how can I help you.",
+}
+
+
 function addMessage(text, sender = 'bot') {
   const msg = document.createElement('div');
   msg.className = `message ${sender}`;
@@ -133,6 +169,19 @@ function removeTypingIndicator() {
   const typing = document.getElementById('typing-indicator');
   if (typing) typing.remove();
 }
+
+function handleKeywordResponse(input) {
+  const lowerCaseInput = input.toLowerCase();
+  
+  for (let keyword in keywordResponses) {
+    if (lowerCaseInput.includes(keyword)) {
+      addMessage(keywordResponses[keyword], 'bot');
+      return true;
+    }
+  }
+  return false; // No matching keyword found
+}
+
 
 function clearSuggestions() {
   suggestionsBox.innerHTML = '';
@@ -174,39 +223,73 @@ backButton.addEventListener('click', () => {
 });
 
 
+// function handleQuestionClick(questionText) {
+//     clearSuggestions();
+//     addMessage(questionText, 'user');
+//     userInput.value = '';
+  
+//     const data = chatData[questionText];
+//     if (!data) {
+//       addMessage("Hello, Please Send us an email at saturnx@gmail.com or call us at 800000000 or fill the Enquiry Form for solving your query we will get back you soon.", 'bot');
+//       return;
+//     }
+  
+//     showTypingIndicator();
+  
+//     setTimeout(() => {
+//       removeTypingIndicator();
+//       addMessage(data.answer, 'bot');
+  
+//       // If children exist, show them
+//       if (data.children.length > 0) {
+//         showSuggestions(data.children);
+//         lastQuestionHadChildren = true;
+//       } else {
+//         // If no children, set flag so parent suggestions return on next input click
+//         lastQuestionHadChildren = false;
+//       }
+//     }, 800);
+// }
 function handleQuestionClick(question) {
-    clearSuggestions();
-    addMessage(question, 'user');
-    userInput.value = '';
-  
-    const data = chatData[question];
-    if (!data) {
-      addMessage("Hello, Please Send us an email at saturnx@gmail.com or call us at 800000000 or fill the Enquiry Form for solving your query we will get back you soon.", 'bot');
-      return;
-    }
-  
+  clearSuggestions();
+  addMessage(question, 'user');
+  userInput.value = ''; // Clear input after sending
+
+  const data = chatData[question];
+
+  if (data) {
     showTypingIndicator();
-  
     setTimeout(() => {
       removeTypingIndicator();
       addMessage(data.answer, 'bot');
-  
-      // If children exist, show them
       if (data.children.length > 0) {
         showSuggestions(data.children);
         lastQuestionHadChildren = true;
       } else {
-        // If no children, set flag so parent suggestions return on next input click
         lastQuestionHadChildren = false;
       }
     }, 800);
-}
-  
+  } else {
+    // ✅ Keyword check
+    const keyword = Object.keys(keywordResponses).find(k =>
+      question.toLowerCase().includes(k)
+    );
 
-// Input handlers
+    if (keyword) {
+      addMessage(keywordResponses[keyword], 'bot');
+    } else {
+      addMessage("Hello, Please Send us an email at saturnx@gmail.com or call us at 800000000 or fill the Enquiry Form for solving your query we will get back you soon.", 'bot');
+    }
+    
+  }
+}
+
 sendBtn.addEventListener('click', () => {
   const input = userInput.value.trim();
-  if (input) handleQuestionClick(input);
+  if (input) {
+    handleQuestionClick(input);
+    userInput.value = ''; // ✅ Clear the input AFTER submission
+  }
 });
 
 userInput.addEventListener('focus', () => {
@@ -236,6 +319,10 @@ function toggleChatbot() {
     container.style.display = "block";
     launcher.style.display = "none";
   }
+  const chatbotContainer = document.getElementById('edu-chatbot-root');
+  const isVisible = chatbotContainer.style.display === 'block';
+
+  chatbotContainer.style.display = isVisible ? 'none' : 'block';
 }
 
 
