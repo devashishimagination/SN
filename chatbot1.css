@@ -6,7 +6,7 @@
   
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f2f5;
+    background: transparent;
     height: 100vh;
     display: flex;
     align-items:end;
@@ -40,9 +40,9 @@
     right: 101px;
     width: 434px;
     max-height: 564px;
-    background: white;
+    background: transparent;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.675);
     z-index: 10000;
   }
   .chat-wrapper {
