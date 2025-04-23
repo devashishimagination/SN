@@ -125,6 +125,7 @@ const keywordResponses = {
   "certification": "Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",
   "certificate":"Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",
   "contact": "You can contact us at saturnx@gmail.com or call us at 800000000.",
+  "address": "yes, our address is xyzzzz",
   "duration": "The duration for most courses is between 6 to 7 months.",
   "salesforce":"Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.",
   "cloud computing":"Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.",
