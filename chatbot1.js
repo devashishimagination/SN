@@ -18,67 +18,67 @@ const chatData = {
     children: ["Salesforce","artificial intelligence","Cloud Computing","Full Stack Development", "Data Science", "Data Analyst","Devops","Mern Stack", "Mean Stack", "C/C++", "Block Chain","Linux Administration", "UI/UX", "System Engineering","Advance Java","Cyber Security"]
   },
   "Salesforce": {
-    answer: "Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-salesforce.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Cloud Computing": {
-    answer: "Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-cloudcom.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Advance Java": {
-    answer: "Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-java.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Linux Administration": {
-    answer: "The Linux course includes command-line basics, shell scripting, system administration, and real-time server configuration tasks, includes hands-on projects, and is taught by experienced instructors",
+    answer: `The Linux course includes command-line basics, shell scripting, system administration, and real-time server configuration tasks, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-linux.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "UI/UX": {
-    answer: "Yes! Our UI/UX course focuses on user research, wireframing, Figma, Adobe XD, and real-time project experience, includes hands-on projects, and is taught by experienced instructors",
+    answer: `Yes! Our UI/UX course focuses on user research, wireframing, Figma, Adobe XD, and real-time project experience, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-ui.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "artificial intelligence": {
-    answer: "Absolutely! Our Artificial Intelligence covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Absolutely! Our Artificial Intelligence covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors. <a href="courses-detailsAIML.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Full Stack Development": {
-    answer: "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-fullstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Data Science": {
-    answer: "The Data Science course includes Python, Machine Learning, Statistics, Data Visualization, Pandas, NumPy, and real-time projects, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `The Data Science course includes Python, Machine Learning, Statistics, Data Visualization, Pandas, NumPy, and real-time projects, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-datasci.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Data Analyst": {
-    answer: "Absolutely! Our Data Analytics covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Absolutely! Our Data Analytics covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-dataanalytics.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Mern Stack": {
-    answer: "The MERN Stack course includes MongoDB, Express.js, React.js, and Node.js with project-based learning and deployment., includes hands-on projects, and is taught by experienced instructors..",
+    answer: `The MERN Stack course includes MongoDB, Express.js, React.js, and Node.js with project-based learning and deployment., includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-mernstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Mean Stack": {
-    answer: "Our MEAN Stack course includes MongoDB, Express, Angular, and Node.js, with REST API integration and real-time applications, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Our MEAN Stack course includes MongoDB, Express, Angular, and Node.js, with REST API integration and real-time applications, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-meanstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "System Engineering": {
-    answer: "System Engineering covers OS concepts, networking, hardware & software configuration, and enterprise systems handling, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `System Engineering covers OS concepts, networking, hardware & software configuration, and enterprise systems handling, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-enge.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Devops": {
-    answer: "Our DevOps training includes CI/CD, Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and cloud integration with real-world projects, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Our DevOps training includes CI/CD, Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and cloud integration with real-world projects, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-devops.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Cyber Security": {
-    answer: "The Cyber Security course covers ethical hacking, network security, threat analysis, and cybersecurity tools with live labs., includes hands-on projects, and is taught by experienced instructors.",
+    answer: `The Cyber Security course covers ethical hacking, network security, threat analysis, and cybersecurity tools with live labs., includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-cyber.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "C/C++": {
-    answer: "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-c.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "Block Chain": {
-    answer: "Block Chain covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+    answer: `Block Chain covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.<a href="courses-detailsBlockchain.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
     children: ["tell me the syllabus","tell me fee structure","certification will you provide","Tell me Course duration"]
   },
   "tell me the syllabus": {
@@ -127,35 +127,44 @@ const keywordResponses = {
   "contact": "You can contact us at saturnx@gmail.com or call us at 800000000.",
   "address": "yes, our address is xyzzzz",
   "duration": "The duration for most courses is between 6 to 7 months.",
-  "salesforce":"Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.",
-  "cloud computing":"Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.",
-  "advance java": "Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.",
-  "java":"Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.",
-  "linux administration":"The Linux course includes command-line basics, shell scripting, system administration, and real-time server configuration tasks, includes hands-on projects, and is taught by experienced instructors",
-  "uiux":"Yes! Our UI/UX course focuses on user research, wireframing, Figma, Adobe XD, and real-time project experience, includes hands-on projects, and is taught by experienced instructors",
-  "artificial intelligence": "Absolutely! Our Artificial Intelligence covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
-  "full stack development": "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
-  "data science":"The Data Science course includes Python, Machine Learning, Statistics, Data Visualization, Pandas, NumPy, and real-time projects, includes hands-on projects, and is taught by experienced instructors.",
-  "data analyst":"Absolutely! Our Data Analytics covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
-  "mern stack":"The MERN Stack course includes MongoDB, Express.js, React.js, and Node.js with project-based learning and deployment., includes hands-on projects, and is taught by experienced instructors..",
-  "mean stack": "Our MEAN Stack course includes MongoDB, Express, Angular, and Node.js, with REST API integration and real-time applications, includes hands-on projects, and is taught by experienced instructors.",
-  "system engineering":"System Engineering covers OS concepts, networking, hardware & software configuration, and enterprise systems handling, includes hands-on projects, and is taught by experienced instructors.",
-  "devops":"Our DevOps training includes CI/CD, Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and cloud integration with real-world projects, includes hands-on projects, and is taught by experienced instructors.",
-  "cyber security":"The Cyber Security course covers ethical hacking, network security, threat analysis, and cybersecurity tools with live labs., includes hands-on projects, and is taught by experienced instructors.",
-  "c/c++": "This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors.",
-  "block chain":"Block Chain covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.",
+  "saturn nexus": "Saturnx Nexus is an IT training and placement company founded in 2023. We offer high-quality, industry-focused courses designed to prepare you for real-world tech careers. Our training programs are led by experts and include placement support to help you land your dream job in IT.",
+  "salesforce":`Our Salesforce course includes CRM fundamentals, Apex, Visualforce, Lightning, and hands-on projects with admin and dev tracks, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-salesforce.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>.`,
+  "cloud computing":`Absolutely! We provide training on AWS, Google Cloud, and Azure platforms with certification preparation, includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-cloudcom.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "advance java": `Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-java.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "java":`Our Java course includes Core & Advanced Java, JDBC, Spring Boot, REST APIs, and hands-on projects to build real-world applications., includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-java.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "linux administration":`The Linux course includes command-line basics, shell scripting, system administration, and real-time server configuration tasks, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-linux.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "uiux":`Yes! Our UI/UX course focuses on user research, wireframing, Figma, Adobe XD, and real-time project experience, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-ui.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "artificial intelligence": `Absolutely! Our Artificial Intelligence covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors. <a href="courses-detailsAIML.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "full stack development": `This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-fullstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "data science":`The Data Science course includes Python, Machine Learning, Statistics, Data Visualization, Pandas, NumPy, and real-time projects, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-datasci.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "data analyst":`Absolutely! Our Data Analytics covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-dataanalytics.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "mern stack":`The MERN Stack course includes MongoDB, Express.js, React.js, and Node.js with project-based learning and deployment., includes hands-on projects, and is taught by experienced instructors.<a href="course-detail-mernstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "mean stack": `Our MEAN Stack course includes MongoDB, Express, Angular, and Node.js, with REST API integration and real-time applications, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-meanstack.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "system engineering":`System Engineering covers OS concepts, networking, hardware & software configuration, and enterprise systems handling, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-enge.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "devops":`Our DevOps training includes CI/CD, Jenkins, Docker, Kubernetes, Git, Maven, Ansible, and cloud integration with real-world projects, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-devops.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "cyber security":`The Cyber Security course covers ethical hacking, network security, threat analysis, and cybersecurity tools with live labs., includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-cyber.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "c/c++": `This course covers both frontend (HTML, CSS, JS, React) and backend (Node.js, MongoDB, Express) with Git and deployment, includes hands-on projects, and is taught by experienced instructors. <a href="course-detail-c.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
+  "block chain":`Block Chain covers both foundational and advanced concepts, includes hands-on projects, and is taught by experienced instructors.<a href="courses-detailsBlockchain.html" target="_blank" style="color: #007bff; text-decoration: underline;">here</a>`,
   "hi" : "Hii  I am Nexus how can I help you.",  
   "hello": "Hello  I am Nexus how can I help you.",
 }
 
 
+// function addMessage(text, sender = 'bot') {
+//   const msg = document.createElement('div');
+//   msg.className = `message ${sender}`;
+//   msg.textContent = text;
+//   chatBox.appendChild(msg);
+//   chatBox.scrollTop = chatBox.scrollHeight;
+// }
 function addMessage(text, sender = 'bot') {
   const msg = document.createElement('div');
   msg.className = `message ${sender}`;
-  msg.textContent = text;
+  msg.innerHTML = text; // ✅ Allow HTML like links
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
+
 
 function showTypingIndicator() {
   const typing = document.createElement('div');
