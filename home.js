@@ -275,6 +275,19 @@ if (enquiryForm) {
         message: msgVal
       });
 
+      const phonePattern = /^\d{10}$/;
+  if (!phonePattern.test(phoneVal)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return; // Stop the form submission
+  }
+
+  // ✅ STEP 3: Validate Email (basic format check)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(emailVal)) {
+    alert("Please enter a valid email address.");
+    return; // Stop the form submission
+  }
+
       // ✅ STEP 2: Build WhatsApp message - ensure all values are included
       const whatsappMessage =
         `*New Enquiry Received*\n\n` +
@@ -527,3 +540,64 @@ partnerLogos.forEach((logo) => {
   })
 })
 
+ // Basic carousel functionality
+ document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.program-slide');
+  const dots = document.querySelectorAll('.nav-dot');
+  let currentIndex = 0;
+  const slideCount = slides.length;
+  
+  // Auto-rotate every 8 seconds
+  const interval = 8000;
+  let slideInterval = setInterval(nextSlide, interval);
+  
+  function showSlide(index) {
+      // Update slides
+      slides.forEach((slide, i) => {
+          slide.classList.remove('active', 'prev', 'next');
+          if (i === index) {
+              slide.classList.add('active');
+          } else if (i < index) {
+              slide.classList.add('prev');
+          } else {
+              slide.classList.add('next');
+          }
+      });
+      
+      // Update dots
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+      
+      currentIndex = index;
+      
+      // Reset timer
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, interval);
+  }
+  
+  function nextSlide() {
+      const newIndex = (currentIndex + 1) % slideCount;
+      showSlide(newIndex);
+  }
+  
+  function prevSlide() {
+      const newIndex = (currentIndex - 1 + slideCount) % slideCount;
+      showSlide(newIndex);
+  }
+  
+  // Dot navigation
+  dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          showSlide(index);
+      });
+  });
+  
+  // Pause on hover
+  const carousel = document.querySelector('.carousel-container');
+  carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  carousel.addEventListener('mouseleave', () => {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, interval);
+  });
+});

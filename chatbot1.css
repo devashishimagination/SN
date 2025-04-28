@@ -42,7 +42,7 @@
     max-height: 564px;
     background: transparent;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.675);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.675); */
     z-index: 10000;
   }
   .chat-wrapper {
