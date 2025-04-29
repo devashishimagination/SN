@@ -397,6 +397,15 @@
   padding: 80px 0;
   background-color: #fff;
 }
+.faq-answer {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+  display: block;
+}
+
 
 /* Live Icon Animation */
 .live-icon {

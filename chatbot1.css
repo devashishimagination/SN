@@ -6,7 +6,7 @@
   
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background: #f0f2f5; */
+    background:rgba(0, 0, 0, 0);
     height: 100vh;
     display: flex;
     align-items:end;
@@ -33,23 +33,12 @@
     gap: 0px;
   }
   
-  #chatbot-container {
-    display: none; /* Hidden initially */
-    position: fixed;
-    bottom: 28px;
-    right: 101px;
-    width: 434px;
-    max-height: 564px;
-    background: transperant;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
-    z-index: 10000;
-  }
+ 
   .chat-wrapper {
     width: 418px;
     max-width: 420px; /* Maintain the design on desktop */
     height: 500px; /* ✅ Fixed height */
-    margin: 10px;
+    margin: 20px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
@@ -61,6 +50,7 @@
   .chat-header {
     background: #007bff;
     color: white;
+    display: flex;
     padding: 15px 20px;
     font-size: 18px;
     font-weight: 600;
@@ -84,7 +74,7 @@
   }
 
   #chatbotClose:hover {
-    color: #ff4d4d; /* Red color on hover */
+    color: #ff4d4d98; /* Red color on hover */
     transform: scale(1.2); /* Slight zoom effect */
   }
   
@@ -157,7 +147,10 @@
   #back-button {
     padding: 6px 12px;
     border: none;
-    background-color: #f0f0f0;
+    margin-left: -7px;
+    margin-right:20px;
+    margin-top:-6px;
+    background-color: #f0f0f002;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -165,7 +158,7 @@
   }
   
   #back-button:hover {
-    background-color: #e0e0e0;
+    background-color: #e0e0e01f;
   }
   
   

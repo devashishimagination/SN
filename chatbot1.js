@@ -228,38 +228,10 @@ function showSuggestions(questions) {
 
 backButton.addEventListener('click', () => {
   clearSuggestions();
-  addMessage("🔙 Going back to main questions...", 'bot');
+  // addMessage("🔙 Going back to main questions...", 'bot');
   showSuggestions(parentQuestions);
 });
 
-
-// function handleQuestionClick(questionText) {
-//     clearSuggestions();
-//     addMessage(questionText, 'user');
-//     userInput.value = '';
-  
-//     const data = chatData[questionText];
-//     if (!data) {
-//       addMessage("Hello, Please Send us an email at saturnx@gmail.com or call us at 800000000 or fill the Enquiry Form for solving your query we will get back you soon.", 'bot');
-//       return;
-//     }
-  
-//     showTypingIndicator();
-  
-//     setTimeout(() => {
-//       removeTypingIndicator();
-//       addMessage(data.answer, 'bot');
-  
-//       // If children exist, show them
-//       if (data.children.length > 0) {
-//         showSuggestions(data.children);
-//         lastQuestionHadChildren = true;
-//       } else {
-//         // If no children, set flag so parent suggestions return on next input click
-//         lastQuestionHadChildren = false;
-//       }
-//     }, 800);
-// }
 function handleQuestionClick(question) {
   clearSuggestions();
   addMessage(question, 'user');
@@ -329,10 +301,10 @@ function toggleChatbot() {
     container.style.display = "block";
     launcher.style.display = "none";
   }
-  const chatbotContainer = document.getElementById('edu-chatbot-root');
-  const isVisible = chatbotContainer.style.display === 'block';
+  // const chatbotContainer = document.getElementById('edu-chatbot-root');
+  // const isVisible = chatbotContainer.style.display === 'block';
 
-  chatbotContainer.style.display = isVisible ? 'none' : 'block';
+  // chatbotContainer.style.display = isVisible ? 'none' : 'block';
 }
 
 
@@ -358,4 +330,7 @@ document.addEventListener("click", function(event) {
   if (chatbot.style.display === "block" && !chatbot.contains(event.target) && !launcher.contains(event.target)) {
     // Keep the chatbot open by preventing closing when clicked outside
   }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("chatbot-container").style.display = "none";
 });

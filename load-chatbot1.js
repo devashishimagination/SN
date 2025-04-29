@@ -38,7 +38,7 @@ if (chatbotContainer) {
   iframe.style.height = "600px";
   iframe.style.border = "none";
   iframe.style.borderRadius = "12px";
-  iframe.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)";
+  iframe.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0)";
   iframe.style.zIndex = "9999"; // ensure it stays on top
 
   chatbotContainer.appendChild(iframe);

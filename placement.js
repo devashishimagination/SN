@@ -183,3 +183,6 @@ partnerLogos.forEach((logo) => {
   })
 })
 
+document.addEventListener("DOMContentLoaded", function () {
+  setupFaqAccordion();
+});
