@@ -14,11 +14,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 2px 0;
+  margin-top: 2px;
+  margin-bottom: -5px;
 }
 
 .logo img {
-  height: 40px;
+  height: 70px;
   transition: all 0.3s ease;
 }
 
@@ -220,6 +222,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-right: -130px;
 }
 
 .quick-enquiry-btn:hover {
@@ -423,6 +426,50 @@
     font-size: 0.9rem;
   }
 }
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  z-index: 10; /* Ensure it's above other elements */
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-buttons a {
+  padding: 14px 30px;
+  background-color: #f76b6b;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-buttons a:hover {
+  background-color: #ff7d7d;
+  transform: translateY(-2px);
+}
+
 /* Footer Styles */
 .footer {
   background-color: #1a252f;
