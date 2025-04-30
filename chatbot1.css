@@ -18,17 +18,9 @@
     bottom: 20px;
     right: 20px;
     max-width: fit-content;
-    /* background-color:#ff4d4d ;
-    border: #007bff;
-    border-width: 10px;
-    color:#007bff; */
     padding: 5px 8px;
     border-radius: 10px;
     cursor: pointer;
-    /* z-index: 9999; */
-    /* font-weight: bold; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    /* display: flex; */
     align-items: center;
     gap: 0px;
   }
