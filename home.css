@@ -1279,57 +1279,7 @@
 /* Call to Action Section */
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); */
 
-.cta-section {
-  font-family: 'Inter', sans-serif;
-  padding: 100px 20px;
-  background: #1e2b3c; /* Deep modern blue */
-  color: #ffffff;
-  text-align: center;
-  position: relative;
-}
 
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.cta-content p {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cta-buttons a {
-  padding: 14px 30px;
-  background-color: #f76b6b;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-buttons a:hover {
-  background-color: #ff7d7d;
-  transform: translateY(-2px);
-}
 
 
 /* Footer Styles */
