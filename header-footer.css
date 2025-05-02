@@ -334,7 +334,7 @@
     flex-direction: columnn;
     align-items: center;
     padding: 10px;
-    background-color: rgb(154 176 224 / 74%);
+    background-color: var(--dark-bg);
   }
 
   .course-icon {
@@ -423,6 +423,7 @@
   .quick-enquiry-btn {
     padding: 8px 15px;
     font-size: 0.9rem;
+    margin-right: 93px
   }
 }
 /* CTA Section */
