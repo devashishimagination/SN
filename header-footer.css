@@ -143,7 +143,7 @@
   gap: 10px;
 }
 
-.course-card {
+.course-card1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,7 +151,6 @@
   padding: 15px;
   /* background-color:#ddd; */
   border-radius: 10px;
-  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -178,7 +177,7 @@
 }
 
 .course-name {
-  color: #1a2a3a;
+  color: #0f172a;
   font-weight: 500;
   text-align: center;
   font-size: 0.9rem;
