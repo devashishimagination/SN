@@ -531,15 +531,25 @@
 }
 
 .course-card {
-  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 15px; */
+  background-color: #0f172a;
+  /* background-color: #f0f0f0; */
+
+  text-decoration: none;
 }
 
 .course-card:hover {
+  background-color: white;
+    /* background-color: #0f172a; */
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -558,6 +568,12 @@
 
 .course-card:hover .course-image img {
   transform: scale(1.05);
+}
+.course-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .course-badge {
@@ -677,8 +693,8 @@
 
 /* Why Choose Us Section */
 .why-choose-us {
-  padding: 80px 0;
-  background-color: #f8f9fa;
+  padding: 20px 0;
+  background-color: #0f172ae8;
   position: relative;
 }
 
@@ -699,27 +715,6 @@
   overflow: hidden;
 }
 
-/* .feature-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #2c3e50, #e74c3c);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.feature-card:hover::before {
-  transform: scaleX(1);
-} */
  /* Create the animated background that comes from bottom on hover */
 .feature-card::before {
   content: '';
@@ -728,7 +723,7 @@
   left: 0;
   width: 100%;
   height: 0%;
-  background: #2c3e50;
+  background: #0f172a;
   z-index: 0;
   transition: none; /* no out animation */
   border-radius: 8px;
@@ -1279,57 +1274,7 @@
 /* Call to Action Section */
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); */
 
-.cta-section {
-  font-family: 'Inter', sans-serif;
-  padding: 100px 20px;
-  background: #1e2b3c; /* Deep modern blue */
-  color: #ffffff;
-  text-align: center;
-  position: relative;
-}
 
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.cta-content p {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cta-buttons a {
-  padding: 14px 30px;
-  background-color: #f76b6b;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-buttons a:hover {
-  background-color: #ff7d7d;
-  transform: translateY(-2px);
-}
 
 
 /* Footer Styles */
@@ -1937,12 +1882,11 @@ body {
 .program-content {
   flex: 1;
   padding: 3rem;
-  /* background-color: var(--dark-card); */
-  /* overflow-y: auto;
+  background-color: var(--dark-card);
+  overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: var(--primary) transparent; */
+  scrollbar-color: var(--primary) transparent;
 }
-
 .program-content::-webkit-scrollbar {
   width: 6px;
 }
