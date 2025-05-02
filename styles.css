@@ -971,6 +971,56 @@ a:hover {
 }
 
 /* Responsive Styles */
+
+/* 📱 For tablets and medium screens */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr; /* Two cards per row */
+    gap: 20px;
+  }
+
+  .benefit-card {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .benefit-description {
+    font-size: 0.9rem;
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* 📱 For small screens and mobile devices */
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* One card per row */
+  }
+
+  .benefit-card {
+    padding: 15px;
+  }
+
+  .benefit-title {
+    font-size: 0.9rem;
+  }
+
+  .benefit-description {
+    font-size: 0.8rem;
+  }
+
+  .benefit-icon {
+    font-size: 2rem;
+  }
+}
+
+
 @media (max-width: 992px) {
   .course-header-content {
     grid-template-columns: 1fr;

@@ -28,8 +28,8 @@
  
   .chat-wrapper {
     width: 418px;
-    max-width: 420px; /* Maintain the design on desktop */
-    height: 500px; /* ✅ Fixed height */
+    max-width: 95vw;
+    height: 500px;
     margin: 20px;
     background: white;
     border-radius: 15px;
@@ -37,7 +37,12 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: fixed;
+    bottom: 80px;
+    right: 40px; /* 👈 updated from 20px to 40px */
+    z-index: 999;
   }
+  
   
   .chat-header {
     background: #007bff;
@@ -182,77 +187,61 @@
     justify-content: center;
   }
   
-  @media (max-width: 768px) {
-    #chatbot-container {
-      bottom: 70px;
-      right: 10px;
-      width: 95%;
-      max-height: 85vh;
-      border-radius: 12px;
-    }
-  
-    .chat-wrapper {
-      width: 100%;
-      height: 85vh;
-      max-height: none;
-      margin: 0;
-      border-radius: 12px;
-    }
-  
-    .chat-header {
-      font-size: 16px;
-      padding: 12px;
-      text-align: center;
-    }
-  
-    #chatbotClose {
-      top: 8px;
-      right: 12px;
-      font-size: 18px;
-    }
-  
-    .chat-box {
-      padding: 10px;
-      gap: 8px;
-    }
-  
-    .message {
-      font-size: 13px;
-      padding: 10px 14px;
-    }
-  
-    .suggestions {
-      padding: 8px 10px;
-      gap: 8px;
-    }
-  
-    .suggestions button {
-      font-size: 12px;
-      padding: 6px 10px;
-    }
-  
-    .chat-input-area {
-      padding: 8px;
-    }
-  
-    .chat-input-area input {
-      font-size: 13px;
-      padding: 8px 10px;
-    }
-  
-    .chat-input-area button {
-      padding: 8px;
-      margin-left: 6px;
-    }
-  
-    #chatbot-launcher {
-      right: 20px;
-      bottom: 20px;
-      font-size: 14px;
-      padding: 8px 14px;
-    }
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .chat-wrapper {
+    width: 90vw;
+    height: 80vh;
+    bottom: 60px;
+    right: 20px;
   }
-  
-  
-  
-  
+
+  .chat-header {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .chat-input-area input {
+    font-size: 13px;
+  }
+
+  .suggestions button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-wrapper {
+    width: 84vw;
+    height: 85vh;
+    margin: 10px;
+    right: -11px;
+  }
+
+  .chat-header {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .chat-box {
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 15px;
+  }
+
+  .chat-input-area {
+    padding: 8px;
+  }
+
+  .chat-input-area input {
+    font-size: 15px;
+  }
+
+  #chatbot-launcher {
+    bottom: 15px;
+    right: 15px;
+  }
+}

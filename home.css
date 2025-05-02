@@ -1859,7 +1859,7 @@ body {
 
 .carousel-container {
   position: relative;
-  height: 600px;
+  height: 680px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -1937,10 +1937,10 @@ body {
 .program-content {
   flex: 1;
   padding: 3rem;
-  background-color: var(--dark-card);
-  overflow-y: auto;
+  /* background-color: var(--dark-card); */
+  /* overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--primary) transparent;
+  scrollbar-color: var(--primary) transparent; */
 }
 
 .program-content::-webkit-scrollbar {
@@ -1956,14 +1956,14 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: white;
+  color:var(--dark-card);
 }
 
 .program-location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--text-light);
+  color: var(--dark-card);;
   margin-bottom: 1.5rem;
 }
 
@@ -1988,13 +1988,13 @@ body {
 
 .highlight-label {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--dark-card);
   font-weight: 500;
 }
 
 .program-description {
   margin-bottom: 2rem;
-  color: var(--text-light);
+  color: var(--dark-card);
   line-height: 1.7;
 }
 
@@ -2011,18 +2011,32 @@ body {
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  color: var(--text);
+  justify-content:center;
+  gap: 0.6rem;
+  color: var(--dark-card);
+  
 }
 
 .feature-icon {
   color: var(--accent);
   margin-top: 0.2rem;
-}
-
-.program-cta {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.program-cta {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   background: linear-gradient(90deg, var(--primary), var(--primary-light));
@@ -2031,6 +2045,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: 200px;
 }
 
 .program-cta:hover {

@@ -121,6 +121,8 @@ Object.keys(chatData).forEach(key => {
 
 // New functionality: Keyword-based response
 const keywordResponses = {
+  "courses": "So, we offer a 15+ Professional IT courses like Salesforce , artificial intelligence , Cloud Computing ,Full Stack Development ,Data Science , Data Analyst,Devops,Mern Stack, Mean Stack, C/C++, Block Chain,Linux Administration, UI/UX, System Engineering,Advance Java, and Cyber Security let me know which course you want to know.",
+  "course" :"So, we offer a 15+ Professional IT courses like Salesforce , artificial intelligence , Cloud Computing ,Full Stack Development ,Data Science , Data Analyst,Devops,Mern Stack, Mean Stack, C/C++, Block Chain,Linux Administration, UI/UX, System Engineering,Advance Java, and Cyber Security let me know which course you want to know.",
   "fee": "The fee structure for courses varies. Please contact us at saturnx@gmail.com for details.",
   "certification": "Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",
   "certificate":"Yes, we provide recognized certifications for all our courses. These certifications can help boost your career prospects.",

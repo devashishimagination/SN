@@ -332,7 +332,7 @@
   }
 
   .course-card {
-    flex-direction: row;
+    flex-direction: columnn;
     align-items: center;
     padding: 10px;
     background-color: rgb(154 176 224 / 74%);
