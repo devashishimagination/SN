@@ -1900,14 +1900,14 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color:var(--dark-card);
+  color:white;
 }
 
 .program-location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--dark-card);;
+  color: rgba(255, 255, 255, 0.575);
   margin-bottom: 1.5rem;
 }
 
@@ -1932,18 +1932,19 @@ body {
 
 .highlight-label {
   font-size: 0.85rem;
-  color: var(--dark-card);
+  color: white;
   font-weight: 500;
 }
 
 .program-description {
   margin-bottom: 2rem;
-  color: var(--dark-card);
+  color: rgba(255, 255, 255, 0.589);
   line-height: 1.7;
 }
 
 .program-features {
   margin-bottom: 2rem;
+  color:white;
 }
 
 .feature-list {
@@ -1957,7 +1958,7 @@ body {
   align-items: flex-start;
   justify-content:center;
   gap: 0.6rem;
-  color: var(--dark-card);
+  color: rgba(255, 255, 255, 0.753);
   
 }
 
