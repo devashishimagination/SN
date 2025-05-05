@@ -33,7 +33,7 @@ if (chatbotContainer) {
   iframe.src = "chatbot1.html";
   iframe.style.position = "fixed";
   iframe.style.bottom = "20px";
-  iframe.style.right = "20px";
+  iframe.style.right = "10px";
   iframe.style.width = "400px";
   iframe.style.height = "500px";
   iframe.style.border = "none";

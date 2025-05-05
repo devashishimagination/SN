@@ -162,11 +162,10 @@ const keywordResponses = {
 function addMessage(text, sender = 'bot') {
   const msg = document.createElement('div');
   msg.className = `message ${sender}`;
-  msg.innerHTML = text; // ✅ Allow HTML like links
+  msg.innerHTML = text;
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
-
 
 function showTypingIndicator() {
   const typing = document.createElement('div');
@@ -184,32 +183,20 @@ function removeTypingIndicator() {
 
 function handleKeywordResponse(input) {
   const lowerCaseInput = input.toLowerCase();
-  
   for (let keyword in keywordResponses) {
     if (lowerCaseInput.includes(keyword)) {
       addMessage(keywordResponses[keyword], 'bot');
       return true;
     }
   }
-  return false; // No matching keyword found
+  return false;
 }
-
 
 function clearSuggestions() {
   suggestionsBox.innerHTML = '';
   suggestionsBox.classList.add('hidden');
 }
 
-// function showSuggestions(questions) {
-//   clearSuggestions();
-//   questions.forEach(question => {
-//     const btn = document.createElement('button');
-//     btn.textContent = question;
-//     btn.onclick = () => handleQuestionClick(question);
-//     suggestionsBox.appendChild(btn);
-//   });
-//   suggestionsBox.classList.remove('hidden');
-// }
 function showSuggestions(questions) {
   clearSuggestions();
   questions.forEach(question => {
@@ -220,7 +207,6 @@ function showSuggestions(questions) {
   });
   suggestionsBox.classList.remove('hidden');
 
-  // Show back button only if we’re not showing parent questions
   if (questions !== parentQuestions) {
     backButtonContainer.classList.remove('hidden');
   } else {
@@ -229,42 +215,41 @@ function showSuggestions(questions) {
 }
 
 backButton.addEventListener('click', () => {
+  currentSuggestions = parentQuestions;
   clearSuggestions();
-  // addMessage("🔙 Going back to main questions...", 'bot');
   showSuggestions(parentQuestions);
 });
 
 function handleQuestionClick(question) {
   clearSuggestions();
   addMessage(question, 'user');
-  userInput.value = ''; // Clear input after sending
+  userInput.value = '';
 
   const data = chatData[question];
-
   if (data) {
     showTypingIndicator();
     setTimeout(() => {
       removeTypingIndicator();
       addMessage(data.answer, 'bot');
       if (data.children.length > 0) {
-        showSuggestions(data.children);
+        currentSuggestions = data.children;
         lastQuestionHadChildren = true;
       } else {
+        currentSuggestions = parentQuestions;
         lastQuestionHadChildren = false;
       }
     }, 800);
   } else {
-    // ✅ Keyword check
     const keyword = Object.keys(keywordResponses).find(k =>
       question.toLowerCase().includes(k)
     );
-
     if (keyword) {
       addMessage(keywordResponses[keyword], 'bot');
     } else {
       addMessage("Hello, Please Send us an email at saturnx@gmail.com or call us at 800000000 or fill the Enquiry Form for solving your query we will get back you soon.", 'bot');
     }
-    
+    currentSuggestions = parentQuestions;
+    lastQuestionHadChildren = false;
   }
 }
 
@@ -272,30 +257,27 @@ sendBtn.addEventListener('click', () => {
   const input = userInput.value.trim();
   if (input) {
     handleQuestionClick(input);
-    userInput.value = ''; // ✅ Clear the input AFTER submission
+    userInput.value = '';
   }
 });
 
 userInput.addEventListener('focus', () => {
-    if (!lastQuestionHadChildren) {
-      showSuggestions(parentQuestions);
-    }
+  showSuggestions(currentSuggestions.length ? currentSuggestions : parentQuestions);
 });
-  
 
 userInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') sendBtn.click();
 });
 
-// On page load
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("chatbot-container").style.display = "none";
   addMessage("👋 Hi! I'm Nexus. Select a topic to begin.", 'bot');
-  showSuggestions(parentQuestions);
-};
+  currentSuggestions = parentQuestions;
+});
+
 function toggleChatbot() {
   const container = document.getElementById("chatbot-container");
   const launcher = document.getElementById("chatbot-launcher");
-
   if (container.style.display === "block") {
     container.style.display = "none";
     launcher.style.display = "block";
@@ -303,36 +285,24 @@ function toggleChatbot() {
     container.style.display = "block";
     launcher.style.display = "none";
   }
-  // const chatbotContainer = document.getElementById('edu-chatbot-root');
-  // const isVisible = chatbotContainer.style.display === 'block';
-
-  // chatbotContainer.style.display = isVisible ? 'none' : 'block';
 }
 
-
-// Close chatbot only when close button is clicked
 const chatbotClose = document.getElementById("chatbotClose");
 chatbotClose.addEventListener("click", function(event) {
-  event.stopPropagation(); // Prevents the click from bubbling up to the parent
+  event.stopPropagation();
   document.getElementById("chatbot-container").style.display = "none";
   document.getElementById("chatbot-launcher").style.display = "block";
 });
 
-// Prevent closing the chatbot when clicking anywhere else
 document.getElementById("chatbot-container").addEventListener("click", function(event) {
-  event.stopPropagation(); // Prevents click inside the chatbot from closing it
+  event.stopPropagation();
 });
 
-// Close chatbot when clicking outside the launcher
 document.addEventListener("click", function(event) {
   const chatbot = document.getElementById("chatbot-container");
   const launcher = document.getElementById("chatbot-launcher");
-
-  // Only hide the chatbot if it's open and the click is not on the launcher
   if (chatbot.style.display === "block" && !chatbot.contains(event.target) && !launcher.contains(event.target)) {
-    // Keep the chatbot open by preventing closing when clicked outside
+    // Do not auto-close on outside click
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("chatbot-container").style.display = "none";
-});
+

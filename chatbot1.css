@@ -25,7 +25,11 @@
     gap: 0px;
   }
   
- 
+  #chatbot-container {
+    display: none; /* Hidden by default */
+    
+  }
+  
   .chat-wrapper {
     width: 418px;
     max-width: 95vw;
@@ -39,7 +43,7 @@
     overflow: hidden;
     position: fixed;
     bottom: 80px;
-    right: 40px; /* 👈 updated from 20px to 40px */
+    right: 40px; 
     z-index: 999;
   }
   
@@ -83,6 +87,22 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .chat-box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    background-image: url('./images/updatedlobg.png'); /* Replace with your logo path */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    filter: blur(1px) opacity(0.2);
+    z-index: 0;
+    pointer-events: none; /* So clicks pass through */
   }
   
   /* ✅ Nice inner scrollbar */

@@ -675,11 +675,14 @@ a.btn.btn-primary.course-sidebar-cta {
   border-radius: 8px;
   padding: 30px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
+  border: 2px solid transparent; /* Default border */
 }
 
 .benefit-card:hover {
   transform: translateY(-5px);
+  border: 2px solid  #2c3e50; /* Thicker border + color change */
+  border-radius: 20px; 
 }
 
 .benefit-icon {
@@ -699,26 +702,26 @@ a.btn.btn-primary.course-sidebar-cta {
   line-height: 1.6;
 }
 
-.course-instructors {
+/* .course-instructors {
   padding: 60px 0;
   background-color: #f8f9fa;
-}
+} */
 
-.instructors-grid {
+/* .instructors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
-}
+} */
 
-.instructor-card {
+/* .instructor-card {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.instructor-image {
+/* .instructor-image {
   height: 200px;
   overflow: hidden;
 }
@@ -771,9 +774,9 @@ a.btn.btn-primary.course-sidebar-cta {
 .instructor-social a:hover {
   background-color: #2c3e50;
   color: white;
-}
+} */
 
-.course-reviews {
+/* .course-reviews {
   padding: 60px 0;
   background-color: white;
 }
@@ -897,7 +900,7 @@ a.btn.btn-primary.course-sidebar-cta {
 .review-content {
   color: #555;
   line-height: 1.6;
-}
+} */
 
 .course-faq {
   padding: 60px 0;
