@@ -95,7 +95,7 @@
     left: 50%;
     width: 180px;
     height: 180px;
-    background-image: url('./images/updatedlobg.png'); /* Replace with your logo path */
+    background-image: url('images/loaderlogo-removebg-preview.png'); /* Replace with your logo path */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
