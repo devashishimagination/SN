@@ -334,7 +334,7 @@
     flex-direction: columnn;
     align-items: center;
     padding: 10px;
-    background-color: rgb(154 176 224 / 74%);
+    background-color: var(--dark-bg);
   }
 
   .course-icon {
@@ -423,6 +423,7 @@
   .quick-enquiry-btn {
     padding: 8px 15px;
     font-size: 0.9rem;
+    margin-right: 93px
   }
 }
 /* CTA Section */
@@ -665,6 +666,7 @@
 }
 
 /* Enquiry Form Popup */
+/* Compact Horizontal Enquiry Form Popup */
 .enquiry-popup {
   position: fixed;
   top: 0;
@@ -688,15 +690,15 @@
 
 .enquiry-popup-content {
   background-color: #fff;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  padding: 30px;
+  border-radius: 8px;
+  width: auto;
+  max-width: 700px; /* Wider for horizontal layout */
+  padding: 20px;
   position: relative;
   transform: translateY(50px);
   transition: all 0.3s ease;
-  max-height: 90vh;
-  overflow-y: auto;
+  display: flex; /* Make content flex for horizontal layout */
+  gap: 20px;
 }
 
 .enquiry-popup.active .enquiry-popup-content {
@@ -705,11 +707,11 @@
 
 .enquiry-close {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   color: #555;
   transition: color 0.3s ease;
@@ -720,37 +722,40 @@
 }
 
 .enquiry-header {
-  text-align: center;
-  margin-bottom: 30px;
+  flex: 1;
+  padding-right: 10px;
+  margin-bottom: 0;
 }
 
 .enquiry-icon {
-  width: 70px;
-  height: 70px;
+  width: 50px; /* Smaller icon */
+  height: 50px;
   background-color: rgba(0, 112, 243, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
   color: #0070f3;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .enquiry-header h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
   color: #2c3e50;
 }
 
 .enquiry-header p {
   color: #555;
+  font-size: 0.9rem;
 }
 
 .enquiry-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 12px;
 }
 
 .form-group {
@@ -759,23 +764,35 @@
 }
 
 .form-group label {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-weight: 500;
   color: #2c3e50;
+  font-size: 0.9rem;
 }
 
 .required {
   color: #e74c3c;
+  font-size: 0.8rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-  padding: 12px 15px;
+  padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make textarea and submit button span two columns */
+.form-group.textarea,
+.form-group.submit {
+  grid-column: span 2;
+}
+
+.form-group textarea {
+  min-height: 80px; /* Smaller textarea */
 }
 
 .form-group input:focus,
@@ -789,33 +806,50 @@
 .form-checkbox {
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .form-checkbox input {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .form-checkbox label {
   margin-bottom: 0;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 .btn-block {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  padding: 8px;
+  font-size: 0.9rem;
 }
 
 .btn-block i {
   transition: transform 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .btn-block:hover i {
-  transform: translateX(5px);
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .enquiry-popup-content {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  
+  .enquiry-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.textarea,
+  .form-group.submit {
+    grid-column: span 1;
+  }
 }
 
 /* Responsive Styles */

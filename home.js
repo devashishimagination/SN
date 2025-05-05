@@ -306,39 +306,7 @@ if (enquiryForm) {
       // Rest of your code...
       window.open(whatsappURL, "_blank");
       
-      // Continue with Google Sheets submission and success message...
-    
-         // ✅ STEP 4: Send to backend for saving into file
-  // ✅ Send to Google Sheet
-  // if (isValid) {
-  //   const nameVal = enquiryForm.querySelector("#name").value.trim();
-  //   const emailVal = enquiryForm.querySelector("#email").value.trim();
-  //   const phoneVal = enquiryForm.querySelector("#phone").value.trim();
-  //   const courseVal = enquiryForm.querySelector("#course").value.trim();
-  //   const msgVal = enquiryForm.querySelector("#message").value.trim() || "N/A";
-  
-    // ✅ WhatsApp message & window.open here...
-  
-//     // ✅ Google Form submission starts here
-// const formData = new FormData();
-// formData.append("entry.1448153125", nameVal);
-// formData.append("entry.763946773", emailVal);
-// formData.append("entry.1402292017", phoneVal);
-// formData.append("entry.2088249416", courseVal);
-// formData.append("entry.117953690", msgVal);
-
-// fetch('https://docs.google.com/forms/d/e/1FAIpQLSdTUpxlePolBV57gH4uliPVMcPU-3Is4FucXawz0L3pUO7KKg/formResponse', {
-//   method: 'POST',
-//   body: formData,
-// }).then(response => {
-//   if (response.ok) {
-//     console.log("Form submitted successfully!");
-//   } else {
-//     console.error("Failed to submit form: ", response.statusText);
-//   }
-// }).catch(err => {
-//   console.error("Error:", err);
-// });
+      
 const formData = new URLSearchParams();
 formData.append("name", nameVal);
 formData.append("email", emailVal);
@@ -359,12 +327,6 @@ fetch("https://script.google.com/macros/s/AKfycbze8cru23RXZmBvCXqiHfH7IYnrYYjMnp
   console.error("Submission error:", err);
   alert("There was an error submitting your enquiry.");
 });
-
-
-  
-    // ✅ Success message and hide popup below...
-  
-  
 
         // ✅ STEP 4: Show success message
         const successMsg = document.createElement("div");
@@ -415,10 +377,6 @@ fetch("https://script.google.com/macros/s/AKfycbze8cru23RXZmBvCXqiHfH7IYnrYYjMnp
                   <option value="DevOps">DevOps</option>
                   <option value="Blockchain Development">Blockchain Development</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="3"></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-block">
                 <span>Submit Enquiry</span>

@@ -181,3 +181,196 @@ class FuturisticHeader {
 document.addEventListener('DOMContentLoaded', () => {
     new FuturisticHeader();
 });
+function initEnquiryPopup() {
+    const enquiryPopup = document.getElementById("enquiryPopup");
+    const enquiryClose = document.getElementById("enquiryClose");
+    const heroEnquiryBtn = document.getElementById("heroEnquiryBtn");
+    const ctaEnquiryBtn = document.getElementById("ctaEnquiryBtn");
+    const enquiryForm = document.getElementById("enquiryForm");
+  
+    if (!enquiryPopup || !enquiryClose) return;
+  
+    // Show popup after 5 seconds
+    setTimeout(() => {
+      enquiryPopup.classList.add("active");
+    }, 3000);
+  
+    // Close popup when clicking the close button
+    enquiryClose.addEventListener("click", () => {
+      enquiryPopup.classList.remove("active");
+    });
+  
+    // Close popup when clicking outside the content
+    enquiryPopup.addEventListener("click", (e) => {
+      if (e.target === enquiryPopup) {
+        enquiryPopup.classList.remove("active");
+      }
+    });
+  
+    // Open popup on button click
+    if (heroEnquiryBtn) {
+      heroEnquiryBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        enquiryPopup.classList.add("active");
+      });
+    }
+  
+    if (ctaEnquiryBtn) {
+      ctaEnquiryBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        enquiryPopup.classList.add("active");
+      });
+    }
+  
+    // Handle form submission
+  // Handle form submission
+  if (enquiryForm) {
+    enquiryForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      let isValid = true;
+      const requiredFields = enquiryForm.querySelectorAll("[required]");
+  
+      // Validate required fields
+      requiredFields.forEach((field) => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.classList.add("error");
+        } else {
+          field.classList.remove("error");
+        }
+      });
+  
+      if (isValid) {
+        // ✅ STEP 1: Get form values - ensure we're getting the correct elements
+        const nameVal = enquiryForm.querySelector("#name").value.trim();
+        const emailVal = enquiryForm.querySelector("#email").value.trim();
+        const phoneVal = enquiryForm.querySelector("#phone").value.trim();
+        const courseVal = enquiryForm.querySelector("#course").value.trim();
+        const msgVal = enquiryForm.querySelector("#message").value.trim() || "N/A";
+  
+        // Debug: Log values to console to verify they're captured
+        console.log("Form values:", {
+          name: nameVal,
+          email: emailVal,
+          phone: phoneVal,
+          course: courseVal,
+          message: msgVal
+        });
+  
+        const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phoneVal)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return; // Stop the form submission
+    }
+  
+    // ✅ STEP 3: Validate Email (basic format check)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailVal)) {
+      alert("Please enter a valid email address.");
+      return; // Stop the form submission
+    }
+  
+        // ✅ STEP 2: Build WhatsApp message - ensure all values are included
+        const whatsappMessage =
+          `*New Enquiry Received*\n\n` +
+          `*Name:* ${nameVal || "Not provided"}\n` +
+          `*Email:* ${emailVal || "Not provided"}\n` +
+          `*Phone:* ${phoneVal || "Not provided"}\n` +
+          `*Interested Course:* ${courseVal || "Not specified"}\n` +
+          `*Message:* ${msgVal}`;
+  
+        console.log("WhatsApp message:", whatsappMessage);
+  
+        // ✅ STEP 3: Send message to WhatsApp
+        const whatsappNumber = "919765569760"; // Replace with your number
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Rest of your code...
+        window.open(whatsappURL, "_blank");
+        
+        
+  const formData = new URLSearchParams();
+  formData.append("name", nameVal);
+  formData.append("email", emailVal);
+  formData.append("phone", phoneVal);
+  formData.append("course", courseVal);
+  formData.append("message", msgVal);
+  
+  fetch("https://script.google.com/macros/s/AKfycbze8cru23RXZmBvCXqiHfH7IYnrYYjMnpxFHbqAEmbb7BevlQyNnpj81MG1Z81w-vlf/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(result => {
+    console.log("Google Sheet submission:", result);
+    alert("Enquiry submitted successfully!");
+  })
+  .catch(err => {
+    console.error("Submission error:", err);
+    alert("There was an error submitting your enquiry.");
+  });
+  
+          // ✅ STEP 4: Show success message
+          const successMsg = document.createElement("div");
+          successMsg.className = "success-message";
+          successMsg.innerHTML =
+            '<i class="fas fa-check-circle"></i> Your enquiry has been submitted successfully! We\'ll get back to you soon.';
+  
+          enquiryForm.innerHTML = "";
+          enquiryForm.appendChild(successMsg);
+  
+          // ✅ STEP 5: Hide popup after success
+          setTimeout(() => {
+            enquiryPopup.classList.remove("active");
+  
+            // Reinitialize the form
+            setTimeout(() => {
+              enquiryForm.innerHTML = `
+                <div class="form-group">
+                  <label for="name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                  <label for="course">Interested Course <span class="required">*</span></label>
+                  <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="Salesforce">Salesforce</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Data Science Fundamentals">Data Science Fundamentals</option>
+                    <option value="Big Data Analytics">Big Data Analytics</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Full Stack Web Development">Full Stack Web Development</option>
+                    <option value="Mern Stack Development">Mern Stack Development</option>
+                    <option value="Mean Stack Development">Mean Stack Development</option>
+                    <option value="System Engineering">System Engineering</option>
+                    <option value="Advanced Java">Advanced Java</option>
+                    <option value="Linux Administration">Linux Administration</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="C/C++">C/C++</option>
+                    <option value="Security Specialist">Security Specialist</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="Blockchain Development">Blockchain Development</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  <span>Submit Enquiry</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              `
+              initEnquiryPopup(); // Re-attach event listener
+            }, 500);
+          }, 3000);
+        }
+      });
+    }
+  }
+  
