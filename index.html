@@ -20,25 +20,21 @@
 
     <div class="loader-wrapper" id="pageLoader">
         <div class="loader">
-            <div class="loader-logo">
-                <img src="images/snlogo.png" alt="Logo" />
-
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="logo-front">
+                        <img src="images/snlogo.png" alt="Company Logo" />
+                    </div>
+                    <div class="logo-back">
+                        <!-- Different image or styled version of logo -->
+                        <img src="images/snlogo.png" alt="Logo Back" style="filter: hue-rotate(120deg);" />
+                    </div>
+                </div>
             </div>
-            <div class="loader-circle loader-circle-outer"></div>
-            <div class="loader-circle loader-circle-middle"></div>
-            <div class="loader-circle loader-circle-inner"></div>
         </div>
         <div class="loader-text">
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-            <span>.</span>  
-            <span>.</span>
-            <span>.</span>
+            <span>L</span><span>O</span><span>A</span><span>D</span><span>D</span><span>I</span>
+            <span>N</span><span>G</span><span>.</span><span>.</span>
         </div>
     </div>
     <!-- Header Container -->
@@ -922,10 +918,10 @@
                 <option value="Blockchain Development">Blockchain Development</option>
               </select>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="3"></textarea>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary btn-block">
               <span>Submit Enquiry</span>
               <i class="fas fa-arrow-right"></i>
@@ -939,15 +935,50 @@
     <script src="home.js"></script>
     <script src="load-chatbot1.js"></script>
     <script>
-        // Page Loader
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('pageLoader').classList.add('fade-out');
-            }, 500);
-        });
+        // Enhanced loader dismissal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create back face if it doesn't exist
+            const flipper = document.querySelector('.flipper');
+            if (flipper && !flipper.querySelector('.logo-back')) {
+                const frontImg = flipper.querySelector('.logo-front img');
+                const backDiv = document.createElement('div');
+                backDiv.className = 'logo-back';
+                
+                const backImg = frontImg.cloneNode();
+                backImg.style.filter = 'hue-rotate(180deg) brightness(1.1)';
+                backDiv.appendChild(backImg);
+                
+                flipper.appendChild(backDiv);
+            }
 
-        
-    </script> 
+            // Handle page load
+            window.addEventListener('load', function() {
+                const loader = document.getElementById('pageLoader');
+                if (loader) {
+                    // Minimum display time
+                    setTimeout(function() {
+                        loader.classList.add('fade-out');
+                        
+                        // Remove after animation completes
+                        setTimeout(function() {
+                            loader.remove();
+                        }, 500);
+                    }, 1500);
+                }
+            });
+            
+            // Fallback in case load event doesn't fire
+            setTimeout(function() {
+                const loader = document.getElementById('pageLoader');
+                if (loader && !loader.classList.contains('fade-out')) {
+                    loader.classList.add('fade-out');
+                    setTimeout(function() {
+                        loader.remove();
+                    }, 500);
+                }
+            }, 3000);
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           const slides = document.querySelectorAll('.slider-image');

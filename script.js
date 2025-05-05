@@ -305,8 +305,8 @@ function renderCourses() {
                     </div>
                 </div>
                 <div class="course-actions">
-                    <a href="${coursePage}" class="btn btn-primary">View Details</a>
-                    <a href="#" class="btn btn-outline">Enroll Now</a>
+                    <a href="${coursePage}" class=" btn-primary">View Details</a>
+                    
                 </div>
             </div>
         `;
