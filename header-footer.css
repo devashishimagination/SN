@@ -823,9 +823,11 @@
 }
 
 .btn-block {
-  width: 100%;
-  padding: 8px;
-  font-size: 0.9rem;
+  width: 95%;
+    padding: 10px;
+    font-size: 0.9rem;
+    height: 28px;
+    margin-top: 49px;
 }
 
 .btn-block i {
