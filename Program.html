@@ -191,6 +191,30 @@
    <script>
     AOS.init();
   </script>
+          <script>
+            fetch('chatbot/chatbot.html')
+              .then(res => res.text())
+              .then(html => {
+                document.querySelector('.chatbot-container').innerHTML = html;
+          
+                // Load CSS
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'chatbot/chatbot1.css';
+                document.head.appendChild(link);
+          
+                // Load JS only after HTML is injected
+                const script = document.createElement('script');
+                script.src = 'chatbot/chatbot1.js';
+                // Wait until the DOM updates before attaching listeners
+                script.onload = () => {
+                  if (typeof initChatbot === 'function') {
+                    initChatbot(); // call this function from chatbot.js
+                  }
+                };
+                document.body.appendChild(script);
+              });
+          </script>
 </body>
 </html>
 

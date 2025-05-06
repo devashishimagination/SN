@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="chatbot/Chatbot1.css" />
+
 
     <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script> -->
 
@@ -17,6 +19,8 @@
 
 <body>
     <body>
+        <div class="chatbot-container"></div>
+
         <div class="loader-wrapper" id="pageLoader">
             <div class="loader">
                 <div class="loader-logo">
@@ -428,6 +432,30 @@
     <script src="common.js"></script>
     <script src="script.js"></script>
     <script src="about.js"></script>
+    <script>
+        fetch('chatbot/chatbot.html')
+          .then(res => res.text())
+          .then(html => {
+            document.querySelector('.chatbot-container').innerHTML = html;
+      
+            // Load CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'chatbot/chatbot1.css';
+            document.head.appendChild(link);
+      
+            // Load JS only after HTML is injected
+            const script = document.createElement('script');
+            script.src = 'chatbot/chatbot1.js';
+            // Wait until the DOM updates before attaching listeners
+            script.onload = () => {
+              if (typeof initChatbot === 'function') {
+                initChatbot(); // call this function from chatbot.js
+              }
+            };
+            document.body.appendChild(script);
+          });
+      </script>
 </body>
 </html>
 

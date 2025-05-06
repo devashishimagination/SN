@@ -101,7 +101,7 @@ function initFormValidation() {
                   (message ? `\n*Message:* ${message}` : "");
               
               // Send to WhatsApp
-              const whatsappNumber = "919765569760"; // your WhatsApp number
+              const whatsappNumber = "919371072629"; // your WhatsApp number
               const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
               window.open(whatsappURL, "_blank");
               

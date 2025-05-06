@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles1.css">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="chatbot/Chatbot1.css" />
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
@@ -15,6 +17,8 @@
 <body>
     <body>
         <body>
+            <div class="chatbot-container"></div>
+
             <div class="loader-wrapper" id="pageLoader">
                 <div class="loader">
                     <div class="loader-logo">
@@ -61,7 +65,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>Visit Us</h3>
-                    <p>123 Tech Street, Innovation City<br>Silicon Valley, CA 94043</p>
+                    <p>4th floor, Mangalwari Complex 1, A Wing, near Government Polytechnic, Sadar, Nagpur, Maharashtra 440001</p>
                     <a href="#map" class="contact-link">View on Map <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -70,7 +74,7 @@
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <p>+1-234-567-8900<br>+1-234-567-8901</p>
+                    <p>+91 9371072629<br>+91 9371072629</p>
                     <a href="tel:+12345678900" class="contact-link">Call Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
@@ -190,11 +194,12 @@
     <!-- Map Section -->
     <section id="map" class="map-section">
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.54249883796518!2d79.08143002966324!3d21.16513019607327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf7c7d9bda07%3A0x20aec29a6496f565!2sRoyals%20Webtech%20%7C%20Software%20Development%2C%20Website%20Developments%2C%20Mobile%20Application!5e0!3m2!1sen!2sin!4v1743502844695!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.4389728003835!2d79.07885157530471!3d21.165055080518712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c13a51908691%3A0xe72ba6b2a0a16cf8!2sSaturnX%20Digital%20Solutions%20%7C%20Software%20Development%2C%20Website%20Developments%2C%20Mobile%20Application!5e1!3m2!1sen!2sin!4v1746525341663!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
+           
             <div class="map-card">
                 <h3>Saturnx Nexus Headquarters</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Innovation City, CA 94043</p>
-                <p><i class="fas fa-phone-alt"></i> +1-234-567-8900</p>
+                <p><i class="fas fa-map-marker-alt"></i> 4th floor, Mangalwari Complex 1, A Wing, near Government Polytechnic, Sadar, Nagpur, Maharashtra 440001</p>
+                <p><i class="fas fa-phone-alt"></i> +91 9371072629</p>
                 <p><i class="fas fa-envelope"></i> info@saturnxnexus.com</p>
                 <a href="https://goo.gl/maps/JGEVmscj8W2XCcQS6" target="_blank" class="btn btn-outline">Get Directions</a>
             </div>
@@ -320,6 +325,29 @@
     <script src="common.js"></script>
     <!-- <script src="script.js"></script> -->
     <script src="contact.js"></script>
-</body>
+    <script>
+        fetch('chatbot/chatbot.html')
+          .then(res => res.text())
+          .then(html => {
+            document.querySelector('.chatbot-container').innerHTML = html;
+      
+            // Load CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'chatbot/chatbot1.css';
+            document.head.appendChild(link);
+      
+            // Load JS only after HTML is injected
+            const script = document.createElement('script');
+            script.src = 'chatbot/chatbot1.js';
+            // Wait until the DOM updates before attaching listeners
+            script.onload = () => {
+              if (typeof initChatbot === 'function') {
+                initChatbot(); // call this function from chatbot.js
+              }
+            };
+            document.body.appendChild(script);
+          });
+      </script></body>
 </html>
 

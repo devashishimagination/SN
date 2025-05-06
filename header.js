@@ -283,7 +283,7 @@ function initEnquiryPopup() {
         console.log("WhatsApp message:", whatsappMessage);
   
         // ✅ STEP 3: Send message to WhatsApp
-        const whatsappNumber = "919765569760"; // Replace with your number
+        const whatsappNumber = "919371072629"; // Replace with your number
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
         
         // Rest of your code...
