@@ -526,9 +526,11 @@
 }
 
 .footer-logo img {
-  height: 193px;
-  width: 275;
-  margin-top: -125;
+  height: 203px;
+  /* width: 260px; */
+  margin-top: -30px;
+  margin-bottom: 17px;
+  margin-left: -30px;
 }
 
 .footer-about {
@@ -821,9 +823,11 @@
 }
 
 .btn-block {
-  width: 100%;
-  padding: 8px;
-  font-size: 0.9rem;
+  width: 95%;
+    padding: 10px;
+    font-size: 0.9rem;
+    height: 28px;
+    margin-top: 49px;
 }
 
 .btn-block i {

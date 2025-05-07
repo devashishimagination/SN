@@ -1,0 +1,21 @@
+<!-- Directly embed chatbot HTML -->
+<div id="chatbot-toggle" class="chatbot-toggle">💬 Chat</div>
+
+<div id="chatbot-window" class="chatbot hidden">
+  <div class="chatbot-header">
+    <span class="title">🤖 Nexus</span>
+    <div>
+      <button id="chatbotBack">&#8592;</button>
+      <button id="chatbotClose">&times;</button>
+    </div>
+  </div>
+  <div id="chat-box" class="chat-box"></div>
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button id="send-btn">Send</button>
+  </div>
+</div>
+
+<!-- Include chatbot styles and logic -->
+<link rel="stylesheet" href="Chatbot1.css" />
+<script src="Chatbot1.js" defer></script>

@@ -3,194 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placements - Saturnx Nexus</title>
-    <link rel="stylesheet" href="styles1.css">
-    <link rel="stylesheet" href="placement.css">
-    <link rel="stylesheet" href="loader.css">
-    <link rel="stylesheet" href="header-footer.css">
+    <title>Internship Programs | Saturnx Nexus</title>
+    <meta name="description" content="Explore Saturnx Nexus internship programs including summer internships, winter internships, workshops, and industry collaborations.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Program.css">
-
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="chatbot/Chatbot1.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
 <body>
-    <body>
-        <body>
-            <div class="loader-wrapper" id="pageLoader">
-                <div class="loader">
-                    <div class="loader-logo">
-                        <img src="images/snlogo.png" alt="Logo" />
-        
+    <div class="chatbot-container"></div>
+
+    <div class="loader-wrapper" id="pageLoader">
+        <div class="loader">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="logo-front">
+                        <img src="images/snlogo.png" alt="Company Logo" />
                     </div>
-                    <div class="loader-circle loader-circle-outer"></div>
-                    <div class="loader-circle loader-circle-middle"></div>
-                    <div class="loader-circle loader-circle-inner"></div>
-                </div>
-                <div class="loader-text">
-                    <span>L</span>
-                    <span>O</span>
-                    <span>A</span>
-                    <span>D</span>
-                    <span>I</span>
-                    <span>N</span>
-                    <span>G</span>
-                    <span>.</span>  
-                    <span>.</span>
-                    <span>.</span>
+                    <div class="logo-back">
+                        <!-- Different image or styled version of logo -->
+                        <img src="images/snlogo.png" alt="Logo Back" style="filter: hue-rotate(360deg);" />
+                    </div>
                 </div>
             </div>
-        
-   
-    <!-- Navbar placeholder - will be added by client -->
-    <!-- <div class="navbar-placeholder"> -->
-        <!-- Navbar will be added here -->
-        <div class="header-container"></div>
+        </div>
+        <div class="loader-text">
+            <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span><span>.</span><span>.</span>
+        </div>
     </div>
+
+
+    <div class="header-container"></div>
 
     <!-- Hero Section -->
     <div class="hero-section about-hero">
         <div class="container">
-            <h1 class="main-title">Internships <span>by Saturnx Nexus</span></h1>
+            <h1 class="main-title">Programs <span>by Saturnx Nexus</span></h1>
             <div class="breadcrumb">
-                <a href="index.html">Home</a> / <span>Programs </span>
+                <a href="index.html">Home</a> / <span>Placement</span>
             </div>
         </div>
     </div>
 
-    
-    <div class="container">
-        <div class="buttons">
-          <button onclick="showContent('summer')">Summer Internship</button>
-          <button onclick="showContent('winter')">Winter Internship</button>
-          <button onclick="showContent('workshop')">Workshop</button>
-          <button onclick="showContent('collab')">Collaboration</button>
+    <section class="program-showcase">
+        <div class="container">
+            <div class="image-carousel" id="carousel">
+                <div class="slider" id="slider">
+                    <div class="slide">
+                        <img src="./program/summer.png" class="horizontal-image" alt="Summer internship program" loading="lazy">
+                        <div class="slide-caption">Summer Internship Program</div>
+                    </div>
+                    <div class="slide">
+                        <img src="./program/winter.png" class="horizontal-image" alt="Winter internship program" loading="lazy">
+                        <div class="slide-caption">Winter Internship Program</div>
+                    </div>
+                    <div class="slide">
+                        <img src="./program/workshop.png" class="horizontal-image" alt="Professional workshops" loading="lazy">
+                        <div class="slide-caption">Skill Development Workshops</div>
+                    </div>
+                    <div class="slide">
+                        <img src="./program/collaboration.png" class="horizontal-image" alt="Industry collaborations" loading="lazy">
+                        <div class="slide-caption">Industry Collaborations</div>
+                    </div>
+                </div>
+                <button class="carousel-nav prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots"></div>
+            </div>
         </div>
-    
-        <div id="content" class="content-box">
-            <!-- <button class="register-btn">Register Now</button> -->
-            <!-- <button class="view-btn">View More</button> -->
-            <!-- <button class="btn btn-green" onclick="showNext()">View More</button> -->
-        </div>
-      </div>
+    </section>
 
-      <section class="service-cards" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" data-aos="zoom-in" data-aos-duration="1000">
-          <h3>Career Discovery Workshop</h3>
-          <hr />
-          <ul>
-            <li>Learn about a career field from the inside and decide if this is the right career field for you.</li>
-            <li>Work alongside a professional in your chosen career area.</li>
-            <li>Observe the workplace and see if it matches expectations.</li>
-          </ul>
+    <section class="about-programs-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Transformative Learning Experiences</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Bridging the gap between academia and industry</p>
+            </div>
+            
+            <div class="about-container" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                    At Saturnx Nexus, we're committed to providing students with practical, real-world experience that complements their academic learning. Our comprehensive programs are designed in collaboration with industry leaders to ensure relevance and immediate applicability in professional environments.
+                </p>
+                <p>
+                    Through our summer and winter internships, specialized workshops, and strategic industry collaborations, students gain hands-on experience working on actual projects, using current technologies, and solving real business challenges. This experiential learning approach accelerates skill development and enhances employability.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Completion Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">Career Impact</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Industry Partners</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-duration="1000">
-          <h3>Growth & Leadership Essentials</h3>
-          <hr />
-          <ul>
-            <li>Learn new skills and add to your knowledge base while gaining confidence in your abilities.</li>
-            <li>Opportunity to practice communication and teamwork skills.</li>
-            <li>Gain industry knowledge first hand from an organization and professionals.</li>
-          </ul>
-        </div>
-      </section>
+    </section>
 
-      <section class="service-cards" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" data-aos="zoom-in" data-aos-duration="1000">
-          <h3>Mentor Match & Network Build</h3>
-          <hr />
-          <ul>
-            <li>Meet new people and practice networking skills while establishing a network of professional contacts, mentors, and references.</li>
-            <li>Open to door to advice on the next steps to take on your career path.</li>
-            <li>Achieve a sense of accomplishment by contributing to an organization.</li>
-          </ul>
+    <section class="program-features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Program Offerings</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Tailored experiences for every learning need</p>
+            </div>
+            
+            <div class="section-grid">
+                <div class="section-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-icon">
+                        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_dyvwkw1u.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+                    </div>
+                    <h3>Summer Internship</h3>
+                    <p>
+                        Our 8-12 week intensive summer program immerses students in professional work environments. Participants contribute to live projects, receive mentorship from industry experts, and develop portfolio-worthy work samples.
+                    </p>
+                    <ul class="program-benefits">
+                        <li><i class="fas fa-check-circle"></i> Full-time immersive experience</li>
+                        <li><i class="fas fa-check-circle"></i> Project-based learning</li>
+                        <li><i class="fas fa-check-circle"></i> Professional mentorship</li>
+                    </ul>
+                    <a href="summer-internship.html" class="view-more-btn">Explore Program <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Other program boxes similarly structured -->
+            </div>
         </div>
-        <div class="card" data-aos="zoom-in" data-aos-duration="1000">
-          <h3>Crafting a Winning Resume</h3>
-          <hr />
-          <ul>
-            <li>Gain valuable experience and accomplishments to add to your resume and/or enhance your application to graduate school</li>
-            <li>Create an advantage over other job or graduate school applicants</li>
-            <li>Potential for a full-time job offer at the end of the internship based on your performance</li>
-          </ul>
-        </div>
-      </section>
-<!-- 
-      <section class="internship-section">
-        <div class="internship-container">
-          <div class="internship-image">
-            <img src="/images/logob.png" alt="Internship" style="width: 250px; height: 250px; margin-left: 200px;" />
-          </div>
-          <div class="internship-content">
-            <h2 id="internship-heading">Summer Internship 2025</h2>
-            <p id="internship-description">
-              Join industry specific and practical oriented internship and make your career in IT industry. We have experts for each technology. We guarantee that you will feel more confident after the completion of industry level internship and training at Webgurukul...
-            </p>
-            <button class="register-btn">Register Now</button>
-           
-            <button class="btn btn-green" onclick="showNext()">View More</button>
-          </div>
-        </div>
-      
-        <div class="circle-cards">
-          <div class="circle-card">DESIGN<br><small>Front End</small></div>
-          <div class="circle-card">DEVELOP<br><small>Back End</small></div>
-          <div class="circle-card">DEPLOY<br><small>Deployment</small></div>
-        </div>        
-      
-      </section> -->
+    </section>
 
-      <section class="tech-marquee-section">
-        <h2>Our Tech Stack</h2>
-        <div class="marquee">
-          <div class="track">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-            <span>Node.js</span>
-            <span>MongoDB</span>
-            <span>Bootstrap</span>
-            <span>Tailwind</span>
-            <span>Git</span>
-            <span>GitHub</span>
-          </div>
+    <!-- <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Success Stories</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">What our participants say about our programs</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- <div class="program-section">
-        <div class="left">
-          <h1>INTERVIEW GUARANTEED PROGRAMS</h1>
-          <p>Move ahead in your career with Interview Guaranteed Programs</p>
-          <a href="#" class="explore-btn">Explore →</a>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Transform Your Career?</h2>
+                <p>Applications for our next cohort are now open. Limited seats available.</p>
+                <div class="cta-buttons">
+                    <a href="apply.html" class="cta-btn primary">Apply Now</a>
+                    <a href="programs-faq.html" class="cta-btn secondary">Program FAQs</a>
+                </div>
+            </div>
         </div>
-        <div class="right">
-          <h1>CERTIFICATION COURSES</h1>
-          <a href="#" class="explore-btn">Explore →</a>
-        </div>
-      </div> -->
+    </section> -->
 
-      <section class="marquee-sec">
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-          <img src="/images/sbt.png" alt="Workshop 1" height="500" style="margin-right: 20px;">
-          <img src="/images/nty.png" alt="Workshop 2" height="500" style="margin-right: 20px;">
-          <img src="/images/sbt.png" alt="Workshop 3" height="500" style="margin-right: 20px;">
-        </marquee>
-      </section>
-    
-    
-<!-- Footer Container -->
-<div class="footer-container"></div>
-   
+    <div class="footer-container"></div>
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <script src="program1.js"></script>
+    <!-- <script src="common.js"></script> -->
     <script src="common.js"></script>
-    <script src="script.js"></script>
-    <!-- <script src="placement.js"></script> -->
-    <script src="Program.js"></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" ></script>
-   <script>
-    AOS.init();
-  </script>
+    <script>
+        fetch('chatbot/chatbot.html')
+          .then(res => res.text())
+          .then(html => {
+            document.querySelector('.chatbot-container').innerHTML = html;
+      
+            // Load CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'chatbot/chatbot1.css';
+            document.head.appendChild(link);
+      
+            // Load JS only after HTML is injected
+            const script = document.createElement('script');
+            script.src = 'chatbot/chatbot1.js';
+            // Wait until the DOM updates before attaching listeners
+            script.onload = () => {
+              if (typeof initChatbot === 'function') {
+                initChatbot(); // call this function from chatbot.js
+              }
+            };
+            document.body.appendChild(script);
+          });
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        fetch('chatbot/chatbot.html')
+          .then(res => res.text())
+          .then(html => {
+            document.querySelector('.chatbot-container').innerHTML = html;
+      
+            // Load CSS
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'chatbot/chatbot1.css';
+            document.head.appendChild(link);
+      
+            // Load JS only after HTML is injected
+            const script = document.createElement('script');
+            script.src = 'chatbot/chatbot1.js';
+            // Wait until the DOM updates before attaching listeners
+            script.onload = () => {
+              if (typeof initChatbot === 'function') {
+                initChatbot(); // call this function from chatbot.js
+              }
+            };
+            document.body.appendChild(script);
+          });
+      </script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 </body>
 </html>
-
