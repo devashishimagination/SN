@@ -545,7 +545,7 @@ a.btn.btn-primary.course-sidebar-cta {
 .course-price img {
   height: 229px;
   width: 400px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .course-price span {
@@ -966,75 +966,62 @@ a.btn.btn-primary.course-sidebar-cta {
 }
 
 /* Responsive Styles */
+/* Responsive Adjustments */
 @media (max-width: 992px) {
-  .course-header-content {
-    grid-template-columns: 1fr;
-  }
-
+  .course-header-content,
   .course-overview-grid {
     grid-template-columns: 1fr;
   }
 
-  .course-sidebar {
-    position: static;
+  .course-header {
+    padding: 40px 0;
   }
 
-  .reviews-summary {
-    flex-direction: column;
+  .cta-section h2,
+  .section-title {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 768px) {
-  .courses-grid,
-  .benefits-grid,
-  .instructors-grid,
-  .related-courses-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
   .main-title {
     font-size: 2rem;
   }
 
-  .main-title span {
-    font-size: 1.5rem;
+  .courses-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
 
-  .course-header-image {
-    height: 200px;
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section {
+    padding: 40px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .courses-grid,
-  .benefits-grid,
-  .instructors-grid,
-  .related-courses-grid {
-    grid-template-columns: 1fr;
+  .btn,
+  .btn-cta {
+    padding: 10px;
+    font-size: 0.95rem;
   }
 
-  .course-actions {
-    flex-direction: column;
+  .course-price {
+    font-size: 1.5rem;
   }
 
-  .btn-outline {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  .main-title {
+  .course-header-info h1 {
     font-size: 1.8rem;
   }
 
-  .main-title span {
-    font-size: 1.3rem;
-  }
-
-  .course-header-meta {
-    flex-direction: column;
-    gap: 10px;
+  .breadcrumb {
+    font-size: 0.85rem;
   }
 }
+
 
 /* Module Toggle Animation */
 .module-toggle {

@@ -522,7 +522,7 @@
 
 .footer-logo {
   margin-bottom: -25px;
-  margin-left: 70px;
+  margin-left: 100px;
 }
 
 .footer-logo img {
@@ -537,6 +537,7 @@
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 20px;
+  margin-right: -26px;
 }
 
 .footer-social {

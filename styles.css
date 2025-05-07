@@ -122,6 +122,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -309,7 +310,27 @@ a:hover {
   padding: 60px 0;
   background-color: #f8f9fa;
 }
-
+.why-choose{
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  color: #2c3e50;
+  background-color:white;
+  height: 78px;
+  margin-bottom: 22px;
+  margin-top: -20px;
+  margin-left: -191px;
+  margin-right: -178px;
+}
+.why-choose::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #e74c3c;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
 .section-title {
   font-size: 2rem;
   text-align: center;
