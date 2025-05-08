@@ -295,18 +295,19 @@
 /* ONLY CHANGING THE IMAGE-RELATED STYLES */
 .hero-image {
   position: relative;
-  width: 171%; /* Increased from 100% */
+  width: 100%; /* Increased from 100% */
   max-width: 650px; /* Increased from 550px */
   height: 574px; /* Increased from 350px */
   margin: 0 -10% 0 0; /* Adjusted to pull image right */
   border-radius: 12px;
   overflow: hidden;
   top: -37px;
+  margin: 0 ,auto;
 }
 
 .slider-image {
   position: absolute;
-  width: 110%; /* Increased from 100% */
+  width: 100%; /* Increased from 100% */
   height: 110%; /* Increased from 100% */
   object-fit: cover;
   object-position: center 30%; /* Adjusted focus position */
@@ -316,15 +317,15 @@
   z-index: 1;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  left: -5%; /* Centering the enlarged image */
+  left: 0%; /* Centering the enlarged image */
   top: -5%; /* Centering the enlarged image */
 }
 
 /* Active slide needs same adjustments */
 .slider-image.active {
-  width: 110%;
+  width: 100%;
   height: 110%;
-  left: -5%;
+  left: 0;
   top: -5%;
   opacity: 1;
   z-index: 2;
@@ -336,14 +337,14 @@
   .hero-image {
     width: 100%; /* Reset on tablet */
     margin: 0 auto; /* Center on tablet */
-    max-width: 500px; /* Adjusted from 450px */
+    max-width: autopx; /* Adjusted from 450px */
     height: 350px; /* Increased from 300px */
   }
   
   .slider-image,
   .slider-image.active {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     left: 0;
     top: 0;
   }
@@ -1773,6 +1774,8 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--dark-bg);
   color: var(--text);
+  overflow-x: hidden;
+
 }
 
 .programs-carousel {
