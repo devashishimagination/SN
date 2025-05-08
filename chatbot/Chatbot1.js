@@ -15,35 +15,38 @@ function initChatbot() {
     let history = [];
 
     function appendMessage(sender, response) {
-        const msg = document.createElement('div');
-        msg.className = sender === 'User' ? 'user' : 'Nexus';
-        msg.textContent = `${sender}: ${response.reply}`; // Display the reply
-
-        chatBox.appendChild(msg);
-
-        // Display suggestions as clickable buttons
-        if (response.suggestions && response.suggestions.length > 0) {
-            const suggestionsDiv = document.createElement('div');
-            suggestionsDiv.className = 'suggestions';
-
-            response.suggestions.forEach(suggestion => {
-                const suggestionBtn = document.createElement('button');
-                suggestionBtn.className = 'suggestion-btn';
-                suggestionBtn.textContent = suggestion;
-                suggestionBtn.addEventListener('click', () => {
-                    appendMessage('User', suggestion);
-                    setTimeout(() => {
-                        appendMessage('Nexus', botReply(suggestion));
-                    }, 400);
-                });
-                suggestionsDiv.appendChild(suggestionBtn);
-            });
-
-            chatBox.appendChild(suggestionsDiv);
-        }
-
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }
+      const msg = document.createElement('div');
+      msg.className = sender === 'User' ? 'user' : 'Nexus';
+      
+      // Handle both string (for user messages) and object (for bot responses)
+      const messageText = typeof response === 'string' ? response : response.reply;
+      msg.textContent = `${sender}: ${messageText}`;
+  
+      chatBox.appendChild(msg);
+  
+      // Display suggestions if they exist (only for bot responses)
+      if (typeof response !== 'string' && response.suggestions && response.suggestions.length > 0) {
+          const suggestionsDiv = document.createElement('div');
+          suggestionsDiv.className = 'suggestions';
+  
+          response.suggestions.forEach(suggestion => {
+              const suggestionBtn = document.createElement('button');
+              suggestionBtn.className = 'suggestion-btn';
+              suggestionBtn.textContent = suggestion;
+              suggestionBtn.addEventListener('click', () => {
+                  appendMessage('User', { reply: suggestion, suggestions: [] });
+                  setTimeout(() => {
+                      appendMessage('Nexus', botReply(suggestion));
+                  }, 400);
+              });
+              suggestionsDiv.appendChild(suggestionBtn);
+          });
+  
+          chatBox.appendChild(suggestionsDiv);
+      }
+  
+      chatBox.scrollTop = chatBox.scrollHeight;
+  }
     const courses = [
         {
           id: 1,
@@ -278,21 +281,6 @@ function initChatbot() {
             reply: "We offer various courses like Salesforce, Artificial Intelligence, Data Science, and more. Ask about any course to know details!",
             suggestions: ['Salesforce', 'Artificial Intelligence', 'Data Science Fundamentals','Big Data Analytics','Cloud Computing','Full Stack Web Developement','Mern Stack Developement','Mean Stack Developement','System Enginering','Advanced Java','Linux Administration','UI/UX Design','C/C++','security SpeciaCyberlist','Devops','Blockchain Development', ]
         };
-
-        // if (lower.includes('web development')) return {
-        //   reply: "The Web Development course is 10 weeks long, includes HTML, CSS, JS, and live projects.",
-        //   suggestions: ['Fees', 'Schedule', 'Certificate']
-        // };
-
-        // if (lower.includes('python')) return {
-        //   reply: "Our Python course covers basic to advanced levels, ideal for beginners and intermediates.",
-        //   suggestions: ['Fees', 'Schedule', 'Certificate']
-        // };
-
-        // if (lower.includes('ui') || lower.includes('ux') || lower.includes('design')) return {
-        //   reply: "The UI/UX course teaches Figma, design systems, and real-world prototyping.",
-        //   suggestions: ['Fees', 'Schedule', 'Certificate']
-        // };
 
         if (lower.includes('fees') || lower.includes('price') || lower.includes('cost')) return {
           reply: "Course fees range from ₹5000 to ₹15000 depending on the course and duration.",

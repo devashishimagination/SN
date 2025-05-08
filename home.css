@@ -255,11 +255,13 @@
   display: flex;
   gap: 15px;
   margin-bottom: 40px;
+  margin-left: 88px;
 }
 
 .hero-stats {
   display: flex;
   gap: 30px;
+  margin-left: 60px;
 }
 
 .hero-stat {
