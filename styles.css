@@ -11,12 +11,14 @@ body {
   color: #333;
   background-color: #f9f9f9;
   padding-top: 80px; /* Adjust this value based on your navbar height */
+  overflow-x: hidden;
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 a {
@@ -319,8 +321,8 @@ a:hover {
   height: 78px;
   margin-bottom: 22px;
   margin-top: -20px;
-  margin-left: -191px;
-  margin-right: -178px;
+  margin-left: 0;
+  margin-right: 0;
 }
 .why-choose::after{
   content: "";
