@@ -1,4 +1,4 @@
-.chatbot-toggle {
+/* .chatbot-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -16,7 +16,17 @@
   .chatbot-toggle:hover {
     transform: scale(1.05);
     background: linear-gradient(135deg, #0056b3, #00a6e0);
+  } */
+  .chatbot-toggle {
+    position: fixed;
+    bottom: 2px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    height: 110px;
+    margin-bottom: 45px;
   }
+  
   
   .chatbot {
     position: fixed;
@@ -172,4 +182,5 @@
     color: white;
     box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
   }
+ 
   

@@ -1,11 +1,20 @@
 <!-- Directly embed chatbot HTML -->
-<div id="chatbot-toggle" class="chatbot-toggle">💬 Chat</div>
+<div id="chatbot-toggle" class="chatbot-toggle">
+  <dotlottie-player
+    src="https://lottie.host/13a31455-7ccf-4081-8747-aa3e937b7664/7PyMT9oVoN.lottie"
+    background="transparent"
+    speed="1"
+    style="width: 150px; height: 150px"
+    loop
+    autoplay
+  ></dotlottie-player>
+</div>
 
 <div id="chatbot-window" class="chatbot hidden">
   <div class="chatbot-header">
     <span class="title">🤖 Nexus</span>
     <div>
-      <button id="chatbotBack">&#8592;</button>
+      <!-- <button id="chatbotBack">&#8592;</button> -->
       <button id="chatbotClose">&times;</button>
     </div>
   </div>
@@ -19,3 +28,5 @@
 <!-- Include chatbot styles and logic -->
 <link rel="stylesheet" href="Chatbot1.css" />
 <script src="Chatbot1.js" defer></script>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
