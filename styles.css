@@ -311,7 +311,7 @@ a:hover {
   background-color: #f8f9fa;
 }
 .why-choose{
-  font-size: 2rem;
+  font-size: x-large;
   text-align: center;
   position: relative;
   color: #2c3e50;
@@ -1241,6 +1241,7 @@ a:hover {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    margin-left: 4px;
   }
 
   .hero-buttons a {
@@ -1249,8 +1250,9 @@ a:hover {
   }
 
   .hero-stats {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
+    margin-left: 5px;
   }
 
   .hero-badge {

@@ -20,11 +20,11 @@
   .chatbot-toggle {
     position: fixed;
     bottom: 2px;
-    right: 5px;
+    right: 0px;
     cursor: pointer;
     z-index: 1000;
     height: 140px;
-    margin-bottom: 100px;
+    margin-bottom: 35px;
   }
   
   
