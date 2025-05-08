@@ -164,3 +164,22 @@ function loadHeaderFooter() {
 
 // Call the function when DOM is loaded
 document.addEventListener('DOMContentLoaded', loadHeaderFooter);
+
+
+    // Set your WhatsApp number (use international format, e.g., 919371072629)
+    const whatsappNumber = "919371072629"; // <-- CHANGE THIS to your WhatsApp number
+
+    // Select all WhatsApp enroll buttons
+    document.querySelectorAll('.view-more-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const programName = this.getAttribute('data-program');
+            const message = `I want to enroll in ${programName}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Open WhatsApp link in a new tab
+            window.open(whatsappLink, '_blank');
+        });
+    });
+
