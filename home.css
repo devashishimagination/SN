@@ -1963,6 +1963,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  margin-top: 13px;
 }
 
 .feature-item {
