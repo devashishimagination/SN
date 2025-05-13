@@ -701,6 +701,7 @@
   transform: translateY(50px);
   transition: all 0.3s ease;
   display: flex; /* Make content flex for horizontal layout */
+  margin-top: -230px;
   gap: 20px;
 }
 

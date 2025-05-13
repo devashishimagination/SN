@@ -160,8 +160,8 @@ const courses = [
   },
   {
     id: 13,
-    title: "C",
-    description: "Unlock the power of programming by mastering C for building efficient and robust applications.",
+    title: "C Language ",
+    description: "Unlock the power of programming by mastering C for building efficient and high-performance applications with industry-level precision.",
     image: "images/clanguage.png",
     duration: "6 Months",
     rating: 4.8,
@@ -428,3 +428,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFaqAccordion()
   loadCourseDetail()
 })
+
+
+
+
+
+
+
