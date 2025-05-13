@@ -72,7 +72,53 @@
     font-size: 17px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
+  #chatbotClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 50%;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#chatbotClose::before,
+#chatbotClose::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+#chatbotClose::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#chatbotClose::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#chatbotClose:hover {
+  background: rgba(230, 57, 71, 0); /* soft red */
+  transform: scale(1.1);
+}
+
+#chatbotClose:hover::before,
+#chatbotClose:hover::after {
+  background-color: rgba(230, 57, 70, 0.85);
+}
+
   .chat-box {
     flex-grow: 1;
     overflow-y: auto;

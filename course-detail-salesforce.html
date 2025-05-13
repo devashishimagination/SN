@@ -16,24 +16,16 @@
 <body>
     <body>
         <body>
-           <div class="loader-wrapper" id="pageLoader">
-        <div class="loader">
-            <div class="flip-container">
-                <div class="flipper">
-                    <div class="logo-front">
-                        <img src="images/snlogo.png" alt="Company Logo" />
-                    </div>
-                    <div class="logo-back">
-                        <!-- Different image or styled version of logo -->
-                        <img src="images/snlogo.png" alt="Logo Back" style="filter: hue-rotate(360deg);" />
-                    </div>
+           <!-- <div class="loader-wrapper" id="pageLoader">
+                <div class="loader-container" id="loader">
+                <div class="orbit-container">
+                    <img src="images/Picsart_25-05-06_15-27-13-047.png" alt="SATURNX Logo" class="center-image">
+                    <div class="orbit orbit1"><div class="orbit-ring ring1"></div></div>
+                    <div class="orbit orbit2"><div class="orbit-ring ring2"></div></div>
+                    <div class="orbit orbit3"><div class="orbit-ring ring3"></div></div>
+                 </div>
                 </div>
-            </div>
-        </div>
-                <div class="loader-text">
-            <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span><span>.</span><span>.</span>
-        </div>
-    </div>
+            </div> -->
         
     <!-- Navbar placeholder - will be added by client -->
     <!-- <div class="navbar-placeholder"> -->
@@ -764,6 +756,21 @@
             </div>
         </div>
     </footer> -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                const mainContent = document.getElementById('mainContent');
+                
+                loader.classList.add('hidden');
+                mainContent.classList.add('visible');
+                
+                setTimeout(() => {
+                    loader.remove();
+                }, 800);
+            }, 2000);
+        });
+    </script>
     <script src="common.js"></script>
     <script src="common.js"></script>
     <script src="script.js"></script>
