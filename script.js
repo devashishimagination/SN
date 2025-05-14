@@ -258,7 +258,7 @@ function renderCourses() {
     "Advanced Java":"course-detail-java.html",
     "Linux Administration":"course-detail-linux.html",
     "UI/UX Design":"course-detail-ui.html",
-    "C":"course-detail-c.html",
+    "C Language ":"course-detail-c.html",
     "security SpeciaCyberlist":"course-detail-cyber.html",
     "Devops":"course-detail-devops.html",
     "Blockchain Development": "courses-detailsBlockchain.html",
