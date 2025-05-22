@@ -283,7 +283,7 @@ function initChatbot() {
         };
 
         if (lower.includes('Aboutus') || lower.includes('about')) return {
-            reply: "Saturnx Nexus was founded in 2024 with a simple mission: to bridge the gap between traditional education and the rapidly evolving tech industry. We believe that everyone should have access to high-quality tech education that prepares them for",
+            reply: "SaturnX Nexus was founded in 2024 with a simple mission: to bridge the gap between traditional education and the rapidly evolving tech industry. We believe that everyone should have access to high-quality tech education that prepares them for",
             suggestions: ['Courses', 'Contact', 'Placement']
         };
 
