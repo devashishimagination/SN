@@ -382,7 +382,7 @@ function loadCourseDetail() {
   }
 
   // Update page title
-  document.title = `${course.title} - Saturnx Nexus `
+  document.title = `${course.title} - SaturnX Nexus `
 
   // Update course header
   const courseHeaderInfo = document.querySelector(".course-header-info")

@@ -282,6 +282,16 @@ function initChatbot() {
             suggestions: ['Salesforce', 'Artificial Intelligence', 'Data Science Fundamentals','Big Data Analytics','Cloud Computing','Full Stack Web Developement','Mern Stack Developement','Mean Stack Developement','System Enginering','Advanced Java','Linux Administration','UI/UX Design','C/C++','security SpeciaCyberlist','Devops','Blockchain Development', ]
         };
 
+        if (lower.includes('Aboutus') || lower.includes('about')) return {
+            reply: "SaturnX Nexus was founded in 2024 with a simple mission: to bridge the gap between traditional education and the rapidly evolving tech industry. We believe that everyone should have access to high-quality tech education that prepares them for",
+            suggestions: ['Courses', 'Contact', 'Placement']
+        };
+
+         if (lower.includes('Placement')) return {
+            reply: "We're proud of our track record in helping students launch successful careers in technology, our graduates find relevant employment within 6 months.Top tech companies that hire our graduates",
+            suggestions: ['Courses', 'Aboutus', 'Contact']
+        };
+
         if (lower.includes('fees') || lower.includes('price') || lower.includes('cost')) return {
           reply: "Course fees range from ₹5000 to ₹15000 depending on the course and duration.",
           suggestions: ['Courses', 'Timings']

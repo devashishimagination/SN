@@ -59,22 +59,31 @@ function initCircularProgress() {
 }
 
 // Function to animate percentage text
+// ──────────────────────────────────────────────
+// REPLACE your entire animatePercentage() with:
+// ──────────────────────────────────────────────
 function animatePercentage(element, start, end) {
-  let current = start
-  const increment = end > 1000 ? 100 : end > 100 ? 5 : 1
-  const duration = 2000 // 2 seconds
-  const steps = Math.ceil((end - start) / increment)
-  const stepTime = duration / steps
+  let current   = start;
+  const increment = end > 1000 ? 100 : end > 100 ? 5 : 1;
+  const duration  = 2000;                       // total animation time (ms)
+  const steps     = Math.ceil((end - start) / increment);
+  const stepTime  = duration / steps;
+
+  /* ➊ Decide the suffix:
+       – If the animated element has class="counter"  → show “+”
+       – Otherwise (it’s the circular percentage text) → show “%”        */
+  const suffix = element.classList.contains("counter") ? "+" : "%";
 
   const timer = setInterval(() => {
-    current += increment
-    if (current > end) {
-      current = end
-      clearInterval(timer)
+    current += increment;
+    if (current >= end) {
+      current = end;
+      clearInterval(timer);
     }
-    element.textContent = current + (end > 100 ? "+" : "%")
-  }, stepTime)
+    element.textContent = current + suffix;     // ➋ Apply the chosen suffix
+  }, stepTime);
 }
+
 
 // Function to initialize counters
 function initCounters() {
