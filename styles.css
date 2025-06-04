@@ -204,8 +204,11 @@ a:hover {
 }
 .rating {
   font-size: 14px;
-  color: #f39c12;
+  color: #757575;
   font-weight: bold;
+}
+.rating:hover{
+  color:white;
 }
 
 
